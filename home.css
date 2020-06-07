@@ -1,8 +1,12 @@
-body {
+#home {
     font-family: Noto Sans;
 }
 .wrap {
     text-align: center;
+}
+.hdtext {
+    margin-left: 10%;
+    margin-top: 2%;
 }
 .wrap div {
     vertical-align: middle;
