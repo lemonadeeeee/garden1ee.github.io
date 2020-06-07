@@ -1,13 +1,12 @@
 #mainhome {
     font-family: Noto Sans;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 .wrap {
     text-align: center;
 }
 .hdtext {
     margin-top: 2%;
+    margin-left: 10%;
 }
 .wrap div {
     vertical-align: middle;
