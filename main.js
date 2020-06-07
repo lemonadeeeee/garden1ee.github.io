@@ -5,7 +5,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state({
         name: 'home',
         url: '/',
-        templateUrl: 'home.html'
+        views: {
+            'mainbody': {
+                templateUrl: 'home.html'
+            }
+        }
     })
     .state({
         name: 'friends',
