@@ -1,0 +1,32 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: Noto Sans;
+}
+.wrap {
+    text-align: center;
+}
+.wrap div {
+    vertical-align: middle;
+}
+.wrap button {
+    background-color: lightgray;
+    border: none;
+    color: black;
+    padding: 5px 8px;
+    text-align: center;
+    border-radius: 10px;
+}
+.showevents {
+    width: 800px;
+    display: inline-block;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.eventelem {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.eventelem img {
+    display: inline;
+}
