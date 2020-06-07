@@ -14,37 +14,65 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state({
         name: 'friends',
         url: '/friends',
-        template: '<h3>friend list</h3>'
+        views: {
+            'mainbody': {
+                template: '<h3>friends list</h3>'
+            }
+        }
     })
     .state({
         name: 'meetings',
         url: '/meetings',
-        template: '<h3>meetings</h3>'
+        views: {
+            'mainbody': {
+                template: '<h3>meetings</h3>'
+            }
+        }
     })
     .state({
         name: 'messages',
         url: '/messages',
-        templateUrl: 'message.html'
+        views: {
+            'mainbody': {
+                templateUrl: 'message.html'
+            }
+        }
     })
     .state({
         name: 'mypage',
         url: '/mypage',
-        template: '<h3>show profile</h3>'
+        views: {
+            'mainbody': {
+                template: '<h3>my profile</h3>'
+            }
+        }
     })
     .state({
         name: 'notification',
         url: '/',
-        template: '<h3>notifications in dropdown form</h3>'
+                views: {
+            'mainbody': {
+                template: '<h3>notifications placed in dropdown form</h3>'
+            }
+        }
     })
     .state({
         name: 'setting',
         url: '/setting',
-        template: '<h3>setting</h3>'
+        views: {
+            'mainbody': {
+                template: '<h3>settings</h3>'
+            }
+        }
     })
     .state({
         name: 'help',
         url: '/',
-        template: '<h3>help popup on homepage</h3>'
+        views: {
+            'mainbody': {
+                template: '<h3>help popup on homepage</h3>'
+            }
+        }
     })
 
 });
