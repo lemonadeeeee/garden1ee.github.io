@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="DP4">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Galindo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">    
+    <link href="./main.css" rel="stylesheet" />
+    <title>Puddies!</title>
+  </head>
+  <body>
+    <nav id="topbar" class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" id="logo" ui-sref="home"><i id="logoimage" class="fas fa-paw"></i> Puddies</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarText" class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="home" ui-sref-active="active"><i id="home" class="fas fa-home"></i><br>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="friends" ui-sref-active="active"><i id="friends" class="fas fa-address-book"></i><br>Friends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="meetings" ui-sref-active="active"><i id="meeting" class="fas fa-users"></i><br>Meetings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="messages" ui-sref-active="active"><i id="messages" class="fas fa-envelope"></i><br>Messages</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-3px">
+          <li class="sidebar-item">
+            <a class="nav-link" ui-sref="mypage"><i id="mypage" class="fas fa-user-circle"></i>  Mypage</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="nav-link" ui-sref="notification"><i id="notify" class="fas fa-bell"></i></a>
+          </li>
+          <li class="sidebar-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i id="dropdown" class="fas fa-bars"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="setting">Setting</a>
+              <a class="dropdown-item" ui-sref="help">Help</a>
+              <a class="dropdown-item" href="index.html">Log out</a>
+            </div>
+          </li>
+        </ul>
+    </nav>
+    <div ui-view> 
+      <i>Loading ....</i>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.26/angular-ui-router.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+  <script src="./main.js"></script>
+</html>     

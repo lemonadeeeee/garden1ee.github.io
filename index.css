@@ -1,0 +1,91 @@
+body {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,248,233,1) 35%, rgba(255,239,207,1) 100%);
+}
+#intro {
+    color: #423830;
+    font-family: Poppins;
+    font-size: 1.3em;
+}
+.vline {
+    border-left: 6px solid black; 
+    padding-left: 15px;
+}
+.fadein {
+    box-sizing:border-box;
+}
+#logo {
+    color: #BE5108;
+    font-family: Galindo;
+    font-size: 2em;
+}
+#logoimage {
+    font-size: 1.2em;
+}
+.header {
+    display: inline;
+}
+h1 {
+    margin-bottom: 0px;
+}
+#login {
+    margin-left: 40%;
+}
+#login-error {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 65%;
+    font-weight: normal;
+    font-family: Noto Sans;
+    font-size: 0.8em;
+    color: red;
+}
+#signup input {
+    font-size: 1em;
+    font-family: Noto Sans;
+}
+input {
+    padding: 6px 8px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1.2px solid lightgray;
+    border-radius: 8px;
+}
+#login button {
+    padding: 5px 8px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1.2px solid lightgray;
+    border-radius: 8px;
+    font-family: Noto Sans;
+    background-color: black;
+    color: white;
+}
+#signup button {
+    padding: 10px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1.2px solid lightgray;
+    border-radius: 8px;
+    font-family: Noto Sans;
+    background-color: #70C946;
+    color: white;
+    font-size: 1.1em;
+}
+#left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+#right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+#signup-error {
+    color: red;
+    font-family: Noto Sans;
+    font-size: 1em;
+}
