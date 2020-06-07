@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Galindo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">    
+    <link href="https://unpkg.com/aos@2.3.0/dist/aos.css" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet" />
+    <title>Puddies!</title>
+  </head>
+  <body>
+    <div style = "width:100%">
+      <div class="header" style="width:100%">
+        <h1><span id="logo"><i id="logoimage" class="fas fa-paw"></i> Puddies</span>
+        <span id="login">
+          <input type="text" id="login-email" placeholder='Email address' onfocus="this.placeholder=''" onblur="this.placeholder='Email address'">
+          <input type="text" id="login-pw" placeholder='Password' onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+          <button> Sign in </button>
+        </span>
+        </h1>
+        <p id="login-error" hidden>-</p>
+      </div>
+        <hr style="height:2px;border-width:0;color:rgb(236, 226, 215);background-color:rgb(238, 228, 217)">
+
+      <div id="left" style = "height:1000px; width: 60%; float:left;">
+        <span id="intro"><h1>Welcome to Puddies!</h1>
+          <h4>Puddies is a social network service for dog owners. Let your dog make nearby friends and for happier dog life!</h4>
+          <br>
+          <h2> Our features </h2>
+          <div class="fadein" data-aos="fade-up">
+            <h3>Recommend friends you would absolutely like</h3>
+            <div class="vline">Our strong friend recommendation service brings you to lovely dogs in your neighborhood.
+              You can simply fill out your profile and give your preferences to meet soulmate of your dog.</div>
+          </div>
+          <br>
+          <div class="fadein" data-aos="fade-up">
+            <h3>Join group meetups and have fun</h3>
+            <div class="vline">Looking for frisbee friends? How about sharing hand-made snack recipes?
+              In Puddies, you can find a variety of awesome meetup events. do activities together, and share useful tips.
+              Or you can even create your own meetup event!</div>
+          </div>
+          <br>
+          <div class="fadein" data-aos="fade-up">
+            <h3>Be conneted, be safe! </h3>
+            <div class="vline">In Puddies, you don't need to leave your contact info.
+              With our strong built-in message service, you can be fully connected with your friends just standing here. Just take a try!</div>
+          </div>
+        </span>
+      </div>
+      <div id="right" style = "height:600px; width: 30%; float:right;">
+        <form id="signup">
+        <h2> New here? Create a free account! </h2>
+        <br><br>
+        <input type="text" id="first name" size="17" placeholder='First name' onfocus="this.placeholder=''" onblur="this.placeholder='First name'">
+        &ensp;
+        <input type="text" id="last name" size="10" placeholder='Last name' onfocus="this.placeholder=''" onblur="this.placeholder='Last name'">
+        <br>
+        <input type="text" id="email address" size="32" placeholder='Email address' onfocus="this.placeholder=''" onblur="this.placeholder='Email address'">
+        <br>
+        <input type="text" id="password" size="32" placeholder='Password' onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+        <br><br>
+        <button type="button"> Sign up </button>
+        <p id="signup-error" hidden>-</p>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+  <script src="./index.js"></script>
+</html> 
