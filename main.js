@@ -82,7 +82,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 templateUrl: 'home.html'
             },
             'addfriends@morefriends': {
-                templateUrl: 'morefriends.html'
+                templateUrl: 'profiles/morefriends.html'
+            }
+        }
+    })
+    .state({
+        name: 'filterfriends',
+        url: '/',
+        views: {
+            'mainbody': {
+                templateUrl: 'home.html'
+            },
+            'addfriends@filterfriends': {
+                templateUrl: 'profiles/filterprofiles.html'
             }
         }
     })
