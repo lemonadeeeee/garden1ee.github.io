@@ -18,3 +18,21 @@ Dependencies
 Dependencies
 * Slick - library for slider
 * Bootstrap 4.5.0 - Card elements and buttons
+
+### meeting.html - container page to show meeting-related pages
+Dependencies
+* AngularJS and AngularJS ui-router
+
+### meeting-list.html - page that shows lists of created meeting events
+Dependencies
+* Bootstrap 3.3.7 - buttons and list entries
+
+### meeting-map.html - page that shows created meetings events to a map
+Dependencies
+* AngularJS and AngularJS ngMap module
+* Bootstrap 3.3.7 - buttons
+
+### meeting-create.html - page of a form to create a meeting event
+Dependencies
+* AngularJS and AngularJS modules (ngMap, ui.bootstrap, ngAnimate, ngSanitize)
+* Bootstrap 3.3.7 - buttons and form
