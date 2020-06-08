@@ -1,4 +1,4 @@
-var app = angular.module('DP4',['ui.router']);
+var app = angular.module('mainnav',['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
@@ -71,6 +71,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
         views: {
             'mainbody': {
                 template: '<h3>help popup on homepage</h3>'
+            }
+        }
+    })
+    .state({
+        name: 'morefriends',
+        url: '/',
+        views: {
+            'mainbody': {
+                templateUrl: 'home.html'
+            },
+            'addfriends@morefriends': {
+                templateUrl: 'morefriends.html'
             }
         }
     })

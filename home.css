@@ -13,7 +13,7 @@
 .wrap div {
     vertical-align: middle;
 }
-.wrap button {
+.wrap #left, #right {
     background-color: lightgray;
     border: none;
     color: black;
@@ -67,7 +67,7 @@
 .wrapcards {
     width: 65%;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .leftinfo {
     text-align: left;
@@ -75,7 +75,10 @@
 .rightinfo {
     text-align: right;
 }
-#seemore {
+#seemorebtn {
     margin: 4%;
     padding: 10px 10px;
+}
+.btnrow {
+    text-align: center;
 }

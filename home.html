@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bringhomecontents">
   <head>
     <meta charset="UTF-8">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
         <button id="right" type="button"><i class="fas fa-angle-right"></i></button>
       </div>
       <h2 class="hdtext">Friends for you</h2><br>
-      <div class="wrap">
+      <div class="wrapincase">
         <div class="row wrapcards">
           <div class="col-md-6 card-container">
             <div class="flipping-profile">
@@ -127,10 +127,10 @@
             </div>
           </div>
         </div>
-        <div class="row wrapcards">
+        <div ui-view="addfriends"></div>
+        <div class="row wrapcards btnrow">
           <div class="col seemore">
-            <br>
-            <a href="#" class="btn btn-light"> See more </a>
+            <a ui-sref="morefriends" id="seemorebtn" class="btn btn-light"> See more </a>
             <br>
           </div>
         </div>
