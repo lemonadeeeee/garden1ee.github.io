@@ -8,7 +8,7 @@
 }
 .hdtext {
     margin-top: 2%;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 .wrap div {
     vertical-align: middle;
@@ -82,3 +82,12 @@
 .btnrow {
     text-align: center;
 }
+#filterbtnbox {
+    text-align: right;
+    margin-right: 20%;
+    margin-bottom: 20px;
+}
+.breedsO, .ageO {
+    margin-left: 40%;
+}
+

@@ -14,14 +14,79 @@
       <div class="wrap">
         <button id="left" type="button"><i class="fas fa-angle-left"></i></button>
         <div class="showevents">
-          <div class="eventelem"><h4>Toy flea market</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="https://via.placeholder.com/200x150"></div>
-          <div class="eventelem"><h4>Frisbee cup!</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="https://via.placeholder.com/200x150"></div>
-          <div class="eventelem"><h4>Bishon time</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="https://via.placeholder.com/200x150"></div>
-          <div class="eventelem"><h4>Snack giveaway</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="https://via.placeholder.com/200x150"></div>
+          <div class="eventelem"><h4>Toy flea market</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/toy.jpg" style="width:200px;height:150px;"></div>
+          <div class="eventelem"><h4>Frisbee cup!</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/frisbee.jpg" style="width:200px;height:150px;"></div>
+          <div class="eventelem"><h4>Bishon time</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/bishon.jpg" style="width:200px;height:150px;"></div>
+          <div class="eventelem"><h4>Snack giveaway</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/snack.jpg" style="width:200px;height:150px;"></div>
         </div>
         <button id="right" type="button"><i class="fas fa-angle-right"></i></button>
       </div>
       <h2 class="hdtext">Friends for you</h2><br>
+      <div id="filterbtnbox"><button class="btn btn-lg btn-outline-dark" data-toggle="modal" data-target="#filterwindow">
+        <i class="fas fa-filter"></i> Filter
+      </button></div>
+      <div class="modal fade" id="filterwindow" tabindex="-1" role="dialog" aria-labelledby="filtertitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="filtertitle">Customize recommendation options</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h6>Only show dog breeds which are: </h6>
+              <div class="form-check breedsO">
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same">
+                <label class="form-check-label" for="breedOpt-same"> same as my dog </label>
+              </div>
+              <div class="form-check breedsO">
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" checked>
+                <label class="form-check-label" for="breedOpt-friendly"> my dog is friendly to </label>
+              </div>
+              <div class="form-check breedsO">
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size">
+                <label class="form-check-label" for="breedOpt-size"> similar in size with my dog </label>
+              </div>
+              <br>
+              <h6>Only show users of age between: </h6>
+              <div class="form-row ageO"> 
+                <div class="form-group col-md-4">
+                  <select class="form-control" id="Age-young">
+                    <option selected>-</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                &nbsp; to &nbsp;
+                <div class="form-group col-md-4">
+                  <select class="form-control" id="Age-old">
+                    <option selected>-</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="wrapincase">
         <div class="row wrapcards">
           <div class="col-md-6 card-container">
@@ -30,7 +95,7 @@
                 <img src="https://via.placeholder.com/300x150" class="card-img-top">
                 <div class="card-body">
                   <h5 class="card-title">Dubu / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>Likes walking</p>
+                  <p class="card-text"><h6>2/F Maltese</h6>I love walking</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary">
@@ -54,21 +119,21 @@
               <div class="card front">
                 <img src="https://via.placeholder.com/300x150" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>Likes walking</p>
+                  <h5 class="card-title">Mango / Sunghoon</h5>
+                  <p class="card-text"><h6>6/M Bulldog</h6>finding friends who also loves sunbathing</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu</h5>
-                  <p class="card-text"><h6>2 and half years old, Female</h6>
-                    <li>likes walking</li>
-                    <li>looking for walk friends</li></p>
+                  <h5 class="card-title">Mango</h5>
+                  <p class="card-text"><h6>6 years old, Male</h6>
+                    <li>likes sunbathe</li>
+                    <li>lot of curiosity, but bit shy</li></p>
                   <br>
-                  <h5 class="card-title">Jungwon</h5>
-                  <p class="card-text"><h6>21 years old, Female</h6>
-                    <li>interested in hand-made dog snacks</li>
-                    <li>frequent walking time: Mon~Fri 5pm</li></p>
+                  <h5 class="card-title">Sunghoon</h5>
+                  <p class="card-text"><h6>25 years old, Male</h6>
+                    <li>interested in frisbee</li>
+                    <li>frequent walking time: Sat~Sun 3pm</li></p>
                   <a href="#" class="btn btn-light"> See profile </a>
                 </div>
               </div>
@@ -81,21 +146,21 @@
               <div class="card front">
                 <img src="https://via.placeholder.com/300x150" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>Likes walking</p>
+                  <h5 class="card-title">Choco / Ryu</h5>
+                  <p class="card-text"><h6>10/M Poodle</h6>cute black poodle</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu</h5>
-                  <p class="card-text"><h6>2 and half years old, Female</h6>
-                    <li>likes walking</li>
-                    <li>looking for walk friends</li></p>
+                  <h5 class="card-title">Choco</h5>
+                  <p class="card-text"><h6>10 years old, Male</h6>
+                    <li>little bit wild</li>
+                    <li>need time to get friendly</li></p>
                   <br>
-                  <h5 class="card-title">Jungwon</h5>
-                  <p class="card-text"><h6>21 years old, Female</h6>
-                    <li>interested in hand-made dog snacks</li>
-                    <li>frequent walking time: Mon~Fri 5pm</li></p>
+                  <h5 class="card-title">Ryu</h5>
+                  <p class="card-text"><h6>20 years old, Male</h6>
+                    <li>interested in letting dogs have fun</li>
+                    <li>frequent walking time: Mon~Fri 7pm</li></p>
                   <a href="#" class="btn btn-light"> See profile </a>
                 </div>
               </div>
@@ -106,21 +171,21 @@
               <div class="card front">
                 <img src="https://via.placeholder.com/300x150" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>Likes walking</p>
+                  <h5 class="card-title">Jockey / Joomin</h5>
+                  <p class="card-text"><h6>1/F Beagle</h6>My dog is super friendly!</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu</h5>
-                  <p class="card-text"><h6>2 and half years old, Female</h6>
-                    <li>likes walking</li>
-                    <li>looking for walk friends</li></p>
+                  <h5 class="card-title">Jockey</h5>
+                  <p class="card-text"><h6>1 year and three months old, Female</h6>
+                    <li>likes running around</li>
+                    <li>looking for friend to enjoy long time activity</li></p>
                   <br>
-                  <h5 class="card-title">Jungwon</h5>
-                  <p class="card-text"><h6>21 years old, Female</h6>
-                    <li>interested in hand-made dog snacks</li>
-                    <li>frequent walking time: Mon~Fri 5pm</li></p>
+                  <h5 class="card-title">Joomin</h5>
+                  <p class="card-text"><h6>24 years old, Female</h6>
+                    <li>interested in freedom from dog</li>
+                    <li>frequent walking time: Mon~Fri 7pm</li></p>
                   <a href="#" class="btn btn-light"> See profile </a>
                 </div>
               </div>
