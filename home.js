@@ -11,5 +11,5 @@ $(document).ready(function(){
     });
     $('#right').click(function(){
         $('.showevents').slick('slickNext');
-    })
+    });
   });
