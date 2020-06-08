@@ -82,23 +82,25 @@ view2input.addEventListener("keyup", function(event) {
 $('#chat1').on( 'click',  function() {
   if (view2.style.display !== "none"){
     view2.style.display = "none";
+    view1.style.display = "block";
   }
 
-  if (view1.style.display === "none") {
+  /*if (view1.style.display === "none") {
     view1.style.display = "block";
   } else {
     view1.style.display = "none";
-  }
+  }*/
 });
 
 $('#chat2').on( 'click',  function() {
   if (view1.style.display !== "none"){
     view1.style.display = "none";
+    view2.style.display = "block";
   }
 
-  if (view2.style.display === "none") {
+  /*if (view2.style.display === "none") {
     view2.style.display = "block";
   } else {
     view2.style.display = "none";
-  }
+  }*/
 });
