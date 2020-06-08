@@ -25,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/meetings',
         views: {
             'mainbody': {
-                template: '<h3>meetings</h3>'
+                templateUrl: 'meeting.html'
             }
         }
     })
