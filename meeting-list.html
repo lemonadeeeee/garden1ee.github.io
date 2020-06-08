@@ -1,0 +1,20 @@
+<div class="form-border">
+  <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <i class="fa fa-list"></i>
+    </label>
+    <label ui-sref="meeting-map" class="btn btn-secondary">
+      <i class="fa fa-map-o"></i>
+    </label>
+  </div>
+  <div class="list-group">
+    <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings">
+      <div class="d-flex w-100 justify-content-between">
+        <h4 class="mb-1">{{ meeting.name }} </h4>
+        <small>{{ meeting.date }} {{ meeting.time }} </small>
+        <small class="distance"><i class="fa fa-map-marker"></i> {{ meeting.distance }} away</small>
+      </div>
+    </a>
+  </div>
+</div>

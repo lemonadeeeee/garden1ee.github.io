@@ -1,0 +1,15 @@
+<div class="form-border">
+  <button type="button" class="btn btn-success">Create a new Meeting</button>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label ui-sref="meeting-list" class="btn btn-secondary">
+      <i class="fa fa-list"></i>
+    </label>
+    <label class="btn btn-secondary active">
+      <i class="fa fa-map-o"></i>
+    </label>
+  </div>
+  <ng-map id="show-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
+    <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
+    <control name="overviewMap" opened="true" />
+  </ng-map>
+</div>

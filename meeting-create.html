@@ -1,0 +1,35 @@
+<div class="form-border">
+  <h3 style='font-weight: bold;'>Create a meeting</h3>
+
+  <div class="form-group">
+    <label>What's your meeting's name?</label>
+    <input class="form-control" type="text" id="name" placeholder="Meeting Name">
+  </div>
+
+  <label>When to meet?</label>
+  <div class="row">
+    <div class="col-md-6">
+      <p class="input-group datepicker">
+        <input type="text" class="datepicker-input form-control" uib-datepicker-popup ng-model="dt"
+          is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open()"><i
+              class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+    <div class="col-md-6" uib-timepicker ng-model="time" ng-change="changed()" hour-step="hstep" minute-step="mstep"
+      show-meridian="ismeridian"></div>
+  </div>
+
+  <label>Where to meet?</label>
+  <ng-map id="create-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
+    <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
+    <control name="overviewMap" opened="true" />
+  </ng-map>
+  <button ui-sref="meeting-list" class="btn btn-success" id="createBtn">Create</button>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.26/angular-ui-router.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBExsnhd78-nfn_fUmphIrkl-IAP_Q237k"></script>
+</div>
