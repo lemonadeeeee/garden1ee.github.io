@@ -3,6 +3,8 @@
 }
 .wrap {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .hdtext {
     margin-top: 2%;
@@ -31,4 +33,19 @@
 }
 .eventelem img {
     display: inline;
+}
+.userprofile {
+    text-align: left;
+}
+.card-deck {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rightinfo {
+    text-align: right;
+}
+#seemore {
+    margin: 4%;
+    padding: 10px 10px;
 }
