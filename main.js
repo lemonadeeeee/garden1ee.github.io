@@ -25,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state({
         name: 'filterfriends',
-        url: '/',
+        url: '/f',
         views: {
             'mainbody': {
                 templateUrl: 'home.html'
@@ -68,6 +68,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         views: {
             'mainbody': {
                 templateUrl: 'mypage.html'
+            }
+        }
+    })
+    .state({
+        name: 'othersprofile',
+        url: '/mandoojuho',
+        views: {
+            'mainbody': {
+                templateUrl: 'friendpage.html'
             }
         }
     })
