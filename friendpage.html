@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Puddies Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./friendpage.css">
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="content-page">
+    <div class="profile-banner" style="background-image: url(https://i.ibb.co/X44knWk/banner.jpg);">
+		<div class="col-sm-3 avatar-container">
+			<img src="img/maltese2.png" class="img-circle profile-avatar" alt="User avatar">
+		</div>
+		<div class="col-sm-12 profile-actions text-right">
+			<button id="friends" type="button" class="btn btn-primary btn-sm"><i id="check"></i> Friends</button>
+			<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-envelope"></i> Send Message</button>
+		</div>
+	</div>
+    <div class="content">
+
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="text-center user-profile-2" style="margin-top:120px">
+					<ul class="list-group">
+                      <li class="list-group-item">
+						  <h4><b>Juho / Mandoo</b></h4>
+					  </li>
+					  <li class="list-group-item">
+						<span class="badge">20</span>
+						Followers
+					  </li>
+					  <li class="list-group-item">
+						<span class="badge">40</span>
+						Following
+					  </li>
+					  <li class="list-group-item">
+						<span class="badge">60</span>
+						Tweets
+					  </li>
+					</ul>
+
+					<div class="user-button">
+						<div class="row">
+							<div class="col-lg-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-cog"></i> Settings</button>
+							</div>
+							<div class="col-lg-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-info-circle"></i> Help</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-9">
+				<div class="widget widget-tabbed">
+					<ul class="nav nav-tabs nav-justified">
+					  <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-pencil"></i> Timeline</a></li>
+					  <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
+					  <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i> Meetings</a></li>
+					  <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Friends</a></li>
+					</ul>
+
+					<div class="tab-content">
+
+						<div class="tab-pane animated active fadeInRight" id="my-timeline">
+							<div class="user-profile-content">
+
+								<div class="the-timeline">
+									<form role="form" class="post-to-timeline">
+										<textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Write something..."></textarea>
+										<div class="row">
+										<div class="col-sm-6">
+											<a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
+											<a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
+											<a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
+											<a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
+										</div>
+										<div class="col-sm-6 text-right"><button type="submit" class="btn btn-primary">Post</button></div>
+										</div>
+									</form>
+									<br><br>
+											<div class="post">
+											<div class="the-date">
+												<span>01</span>
+												<small>Feb</small>
+											</div>
+												<h4><strong>Going out for a walk with my favorite dog in the world :D</strong></h4>
+											<div class="locationWrapper">
+												<iframe width="100%" height="300px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.317295747773!2d126.98614081744383!3d37.57114549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2e796ca91b7%3A0x70ff69e12252e31c!2sTapgol%20Park!5e0!3m2!1sen!2sae!4v1591560638935!5m2!1sen!2sae" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+											</div>
+											</div>
+											<div class="post">
+											<div class="the-date">
+												<span>31</span>
+												<small>Jan</small>
+											</div>
+												<h4><strong>I managed to record this funny video of Mandoo today. Haha, what is he doing?</strong></h4>
+											<div class="videoWrapper">
+												<iframe width="100%" height="300px" src="https://player.vimeo.com/video/33219961" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+											</div>
+											</div>
+											<div class="post">
+											<div class="the-date">
+												<span>25</span>
+												<small>Jan</small>
+												<h4><strong>Mandoo has been enjoying this tune the past week!</strong></h4>
+											</div>
+												<iframe width="100%" height="300px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/339224868&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/jeffreymichaelpiano" title="Fireheart Music, Inc" target="_blank" style="color: #cccccc; text-decoration: none;">Fireheart Music, Inc</a> · <a href="https://soundcloud.com/jeffreymichaelpiano/dog-music-soft-music" title="Dog Music (Soft Music)" target="_blank" style="color: #cccccc; text-decoration: none;">Dog Music (Soft Music)</a>
+											</div>
+											</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane animated fadeInRight" id="about">
+							<div class="user-profile-content">
+								<h5><strong>About Mandoo</strong></h5>
+								<p>
+								Mandoo is a 3 years old male Maltese. He likes to sunbathe. He is very curious, but also very shy. He usually enjoys running around in the park. The way to his heart is through a biscuit treat.
+								</p>
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<h5><strong>Profile Information</strong></h5>
+											<address>
+												<strong>Name:</strong><br>
+												<p>Mandoo</p>
+											</address>
+											<address>
+												<strong>Breed:</strong><br>
+												<p>Maltese</p>
+											</address>
+											<address>
+												<strong>Age:</strong><br>
+												<p>3 years</p>
+											</address>
+										<address>
+											<strong>Height:</strong><br>
+											<p>22cm</p>
+										</address>
+										<address>
+											<strong>Weight:</strong><br>
+											<p>4kg</p>
+										</address>
+									</div>
+									<div class="col-sm-6">
+										<h5><strong>Likes:</strong></h5>
+										<ul>
+											<li>Long walks at the beach</li>
+											<li>Sunbathing</li>
+											<li>Meeting new friends</li>
+											<li>Biscuit Treats</li>
+										</ul>
+										<h5><strong>Dislikes:</strong></h5>
+										<ul>
+											<li>Balls</li>
+											<li>Cats</li>
+											<li>Cars</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane animated fadeInRight" id="user-activities">
+							<div class="scroll-user-widget">
+							</div>
+						</div>
+
+						<div class="tab-pane animated fadeInRight" id="mymessage">
+							<div class="scroll-user-widget">
+								<ul class="media-list">
+								  <li class="media">
+									<a class="pull-left" href="#fakelink">
+									  <img class="media-object user-message" src="https://i.ibb.co/0hBttLV/owner2.jpg" alt="Avatar">
+									</a>
+									<div class="media-body">
+									  <h4 class="media-heading"><a href="#fakelink">Mike Wazowski / Danbi</a> <small>Last Seen: Just now</small></h4>
+									  <p>Father of Danbi. Danbi is a kind golden retriever who likes to play catch with balls in the park.</p>
+									</div>
+								  </li>
+								  <li class="media">
+									<a class="pull-left" href="#fakelink">
+									  <img class="media-object user-message" src="https://i.ibb.co/MNTBp5X/owner-7.jpg" alt="Avatar">
+									</a>
+									<div class="media-body">
+									  <h4 class="media-heading"><a href="#fakelink">Randall Boggs / Gaeul</a> <small>Last Seen: Yesterday at 04:00 AM</small></h4>
+									  <p>Gaeul is an old Siberian Husky. He may look big and mean, but he is a sweety at heart,</p>
+									</div>
+								  </li>
+								  <li class="media">
+									<a class="pull-left" href="#fakelink">
+									  <img class="media-object user-message" src="https://i.ibb.co/jkzdg33/owner-3.jpg" alt="Avatar">
+									</a>
+									<div class="media-body">
+									  <h4 class="media-heading"><a href="#fakelink">Phineas Flynn / Seulgi</a> <small>Last Seen: January 17, 2019 05:35 PM</small></h4>
+									  <p>Seulgi is a sweet baby. He is only 2 months old, so he is still afraid of strangers and doesn't like to socialize.</p>
+									</div>
+								  </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script  src="./friendpage.js"></script>
+</body>
+</html>
