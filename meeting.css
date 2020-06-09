@@ -15,7 +15,7 @@
 }
 
 .datepicker {
-    margin-top: 34px;
+    margin-top: 25px;
     width: 100%;
 }
 
@@ -35,4 +35,8 @@
 
 .distance {
     float: right;
+}
+
+.red {
+    color: red;
 }
