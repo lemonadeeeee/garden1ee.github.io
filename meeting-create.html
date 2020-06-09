@@ -1,16 +1,14 @@
 <link href="./meeting.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
   <h3 style='font-weight: bold;'>Create a meeting</h3>
 
   <div class="form-group">
-    <label>What's your meeting's name?</label>
-    <input class="form-control" type="text" id="name" placeholder="Meeting Name">
+    <label>What's your meeting's name? <small class="red">* required</small></label>
+    <input class="form-control" type="text" id="name">
   </div>
 
-  <label>When to meet?</label>
+  <label>When to meet? <small class="red">* required</small></label>
   <div class="row">
     <div class="col-md-6">
       <p class="input-group datepicker">
@@ -18,7 +16,7 @@
           is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
         <span class="input-group-btn">
           <button type="button" class="btn btn-default" ng-click="open()"><i
-              class="glyphicon glyphicon-calendar"></i></button>
+              class="fa fa-calendar"></i></button>
         </span>
       </p>
     </div>
@@ -26,7 +24,7 @@
       show-meridian="ismeridian"></div>
   </div>
 
-  <label>Where to meet?</label>
+  <label>Where to meet? <small class="red">* required</small></label>
   <ng-map id="create-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
     <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
     <control name="overviewMap" opened="true" />

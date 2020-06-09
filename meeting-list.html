@@ -1,6 +1,4 @@
 <link href="./meeting.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
@@ -16,9 +14,9 @@
     <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings">
       <div class="d-flex w-100 justify-content-between">
         <h4 class="mb-1">{{ meeting.name }} </h4>
-        <small>{{ meeting.date }} {{ meeting.time }} </small>
         <small class="distance"><i class="fa fa-map-marker"></i> {{ meeting.distance }} away</small>
       </div>
+      <small>{{ meeting.date }} {{ meeting.time }} </small>
     </a>
   </div>
 </div>

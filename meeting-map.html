@@ -1,6 +1,4 @@
 <link href="./meeting.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
@@ -12,7 +10,7 @@
       <i class="fa fa-map-o"></i>
     </label>
   </div>
-  <ng-map id="show-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
+  <ng-map style="height: 650px;" id="show-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
     <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
     <control name="overviewMap" opened="true" />
   </ng-map>
