@@ -229,16 +229,50 @@ app.controller('meetingCtrl', function ($scope, $log) {
         }
     ];
 
-    $scope.dynMarkers = [];
+    $scope.submit = function() {
+        var name = document.getElementById('name').value;
+        console.log(formatDate($scope.dt))
+        console.log($scope.time)
+        if (name != "" && marker != undefined) {
+            var new_event = {
+                "name": name,
+                "user_id": "1",
+                "latitude": marker.position.lat(),
+                "longitude": marker.position.lat(),
+                "date": formatDate($scope.dt),
+                "time": String($scope.time).substring(16, 21),
+                "people": "1",
+                "distance": "???m",
+            }
+            $scope.meetings.push(new_event);
+            new google.maps.Marker({ position: marker.position, map: showMap });
+        }
+    }
 
-    var map, marker;
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
+
+
+    var createMap, showMap, marker;
     $scope.$on('mapInitialized', function (event, evtMap) {
-        map = evtMap
-        if (map.id == "create-map") {
-            google.maps.event.addListener(map, 'click', function (event) {
+        if (evtMap.id == "create-map") {
+            createMap = evtMap;
+            google.maps.event.addListener(createMap, 'click', function (event) {
                 refreshMarker(event.latLng);
             })
-        } else if (map.id == "show-map") {
+        } else if (evtMap.id == "show-map") {
+            showMap = evtMap;
             $scope.meetings.forEach(placeMarker);
         }
     })
@@ -247,19 +281,18 @@ app.controller('meetingCtrl', function ($scope, $log) {
         if (marker != undefined) {
             marker.setMap(null);
         }
-        console.log('Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng())
         marker = new google.maps.Marker({
             position: location,
-            map: map,
+            map: createMap,
         });
         var infowindow = new google.maps.InfoWindow({
             content: 'Here?'
         });
-        infowindow.open(map, marker);
+        infowindow.open(createMap, marker);
     }
 
     function placeMarker(meeting, index, array) {
         var latLng = new google.maps.LatLng(Number(meeting["latitude"]), Number(meeting["longitude"]));
-        new google.maps.Marker({ position: latLng, map: map });
+        new google.maps.Marker({ position: latLng, map: showMap });
     }
 });

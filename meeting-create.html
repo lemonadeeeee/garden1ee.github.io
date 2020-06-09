@@ -15,7 +15,7 @@
     <div class="col-md-6">
       <p class="input-group datepicker">
         <input type="text" class="datepicker-input form-control" uib-datepicker-popup ng-model="dt"
-          is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
         <span class="input-group-btn">
           <button type="button" class="btn btn-default" ng-click="open()"><i
               class="glyphicon glyphicon-calendar"></i></button>
@@ -31,5 +31,5 @@
     <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
     <control name="overviewMap" opened="true" />
   </ng-map>
-  <button ui-sref="meeting-list" class="btn btn-success" id="createBtn">Create</button>
+  <button ui-sref="meeting-list" class="btn btn-success" id="createBtn" ng-click="submit()">Create</button>
 </div>
