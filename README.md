@@ -48,3 +48,7 @@ Dependencies
 ### mypage.html - page that shows user's profile along with profile related information such as user's information,friends, and meetings
 Dependencies
 * Bootstrap 3.3.6 - buttons
+
+### friendpage.html - page that shows another user's profile you can see and interact with
+Dependencies
+* Bootstrap 3.3.6 - buttons
