@@ -21,19 +21,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
     .state({
-        name: 'meetings',
-        url: '/meetings',
-        views: {
-            'mainbody': {
-                templateUrl: 'meeting.html'
-            }
-        }
-    })
-    .state({
         name: 'meeting-list',
         url: '/meeting-list',
         views: {
-            'meeting': {
+            'mainbody': {
                 templateUrl: 'meeting-list.html'
             }
         }
@@ -42,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         name: 'meeting-map',
         url: '/meeting-map',
         views: {
-            'meeting': {
+            'mainbody': {
                 templateUrl: 'meeting-map.html'
             }
         }
@@ -51,7 +42,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         name: 'meeting-create',
         url: '/meeting-create',
         views: {
-            'meeting': {
+            'mainbody': {
                 templateUrl: 'meeting-create.html'
             }
         }
@@ -268,7 +259,6 @@ app.controller('meetingCtrl', function ($scope, $log) {
     }
 
     function placeMarker(meeting, index, array) {
-        console.log('hi')
         var latLng = new google.maps.LatLng(Number(meeting["latitude"]), Number(meeting["longitude"]));
         new google.maps.Marker({ position: latLng, map: map });
     }
