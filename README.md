@@ -2,6 +2,7 @@ Kindly leave brief file description here:
 
 Overall dependencies
 * Fontawesome icons
+* Material icons
 * Google fonts
 * Jquery
 
@@ -39,3 +40,11 @@ Dependencies
 Dependencies
 * AngularJS and AngularJS modules (ngMap, ui.bootstrap, ngAnimate, ngSanitize)
 * Bootstrap 3.3.7 - buttons and form
+
+### messages.html - page that handles the messaging features of the app such as chats
+Dependencies
+* Bootstrap 4.1.3 - container and buttons
+
+### mypage.html - page that shows user's profile along with profile related information such as user's information,friends, and meetings
+Dependencies
+* Bootstrap 3.3.6 - buttons
