@@ -12,6 +12,30 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
     .state({
+        name: 'morefriends',
+        url: '/',
+        views: {
+            'mainbody': {
+                templateUrl: 'home.html'
+            },
+            'addfriends@morefriends': {
+                templateUrl: 'profiles/morefriends.html'
+            }
+        }
+    })
+    .state({
+        name: 'filterfriends',
+        url: '/',
+        views: {
+            'mainbody': {
+                templateUrl: 'home.html'
+            },
+            'addfriends@filterfriends': {
+                templateUrl: 'profiles/filterprofiles.html'
+            }
+        }
+    })
+    .state({
         name: 'friends',
         url: '/friends',
         views: {
@@ -34,7 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/messages',
         views: {
             'mainbody': {
-                templateUrl: 'message.html'
+                templateUrl: 'messages.html'
             }
         }
     })
@@ -43,7 +67,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/mypage',
         views: {
             'mainbody': {
-                template: '<h3>my profile</h3>'
+                templateUrl: 'mypage.html'
             }
         }
     })
@@ -71,30 +95,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         views: {
             'mainbody': {
                 template: '<h3>help popup on homepage</h3>'
-            }
-        }
-    })
-    .state({
-        name: 'morefriends',
-        url: '/',
-        views: {
-            'mainbody': {
-                templateUrl: 'home.html'
-            },
-            'addfriends@morefriends': {
-                templateUrl: 'profiles/morefriends.html'
-            }
-        }
-    })
-    .state({
-        name: 'filterfriends',
-        url: '/',
-        views: {
-            'mainbody': {
-                templateUrl: 'home.html'
-            },
-            'addfriends@filterfriends': {
-                templateUrl: 'profiles/filterprofiles.html'
             }
         }
     })

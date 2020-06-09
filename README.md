@@ -17,7 +17,10 @@ Dependencies
 ### home.html - main page with popular events and friend recommendation (with home.css, home.js)
 Dependencies
 * Slick - library for slider
-* Bootstrap 4.5.0 - Card elements and buttons
+* Bootstrap 4.5.0 - Card elements, buttons, and modal elements.
+    * Referred to code examples of Bootstrap document on 'modal' a lot in implementation
+
+### profiles>filterprofiles.html, morefriends.html - Plain HTML files just for storing user profile data
 
 ### meeting.html - container page to show meeting-related pages
 Dependencies
