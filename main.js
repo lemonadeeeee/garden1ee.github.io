@@ -25,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state({
         name: 'filterfriends',
-        url: '/f',
+        url: '/',
         views: {
             'mainbody': {
                 templateUrl: 'home.html'
@@ -45,11 +45,29 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
     .state({
-        name: 'meetings',
-        url: '/meetings',
+        name: 'meeting-list',
+        url: '/meeting-list',
         views: {
             'mainbody': {
-                templateUrl: 'meeting.html'
+                templateUrl: 'meeting-list.html'
+            }
+        }
+    })
+    .state({
+        name: 'meeting-map',
+        url: '/meeting-map',
+        views: {
+            'mainbody': {
+                templateUrl: 'meeting-map.html'
+            }
+        }
+    })
+    .state({
+        name: 'meeting-create',
+        url: '/meeting-create',
+        views: {
+            'mainbody': {
+                templateUrl: 'meeting-create.html'
             }
         }
     })
@@ -68,15 +86,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         views: {
             'mainbody': {
                 templateUrl: 'mypage.html'
-            }
-        }
-    })
-    .state({
-        name: 'othersprofile',
-        url: '/mandoojuho',
-        views: {
-            'mainbody': {
-                templateUrl: 'friendpage.html'
             }
         }
     })
@@ -107,6 +116,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
 });
 
 app.controller('meetingCtrl', function ($scope, $log) {
