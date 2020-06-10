@@ -1,4 +1,4 @@
-<link href="./meeting.css" rel="stylesheet"/>
+<link href="./meeting.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
   <h3 style='font-weight: bold;'>Create a meeting</h3>
@@ -12,22 +12,21 @@
   <div class="row">
     <div class="col-md-6">
       <p class="input-group datepicker">
-        <input type="text" class="datepicker-input form-control" uib-datepicker-popup ng-model="dt"
+        <input type="text" class="datepicker-input form-control" uib-datepicker-popup ng-model="formDate"
           is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
         <span class="input-group-btn">
-          <button type="button" class="btn btn-default" ng-click="open()"><i
-              class="fa fa-calendar"></i></button>
+          <button type="button" class="btn btn-default" ng-click="open()"><i class="fa fa-calendar"></i></button>
         </span>
       </p>
     </div>
-    <div class="col-md-6" uib-timepicker ng-model="time" ng-change="changed()" hour-step="hstep" minute-step="mstep"
-      show-meridian="ismeridian"></div>
+    <div class="col-md-6" uib-timepicker ng-model="formTime" ng-change="changed()" hour-step="hstep" minute-step="mstep"
+      show-meridian="true"></div>
   </div>
 
   <label>Where to meet? <small class="red">* required</small></label>
   <ng-map id="create-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
-    <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
     <control name="overviewMap" opened="true" />
   </ng-map>
   <button ui-sref="meeting-list" class="btn btn-success" id="createBtn" ng-click="submit()">Create</button>
+  <button ui-sref="meeting-list" class="btn btn-light" id="cancelBtn">Cancel</button>
 </div>

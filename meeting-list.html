@@ -1,4 +1,4 @@
-<link href="./meeting.css" rel="stylesheet"/>
+<link href="./meeting.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
@@ -11,12 +11,48 @@
     </label>
   </div>
   <div class="list-group">
-    <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings">
+    <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings"
+      data-toggle="modal" data-target="#exampleModal" ng-click="showMeeting(meeting)">
       <div class="d-flex w-100 justify-content-between">
         <h4 class="mb-1">{{ meeting.name }} </h4>
-        <small class="distance"><i class="fa fa-map-marker"></i> {{ meeting.distance }} away</small>
+        <small class="float-right"><i class="fa fa-map-marker"></i> {{ meeting.distance }}m away</small>
       </div>
       <small>{{ meeting.date }} {{ meeting.time }} </small>
+      <small class="float-right"><i class="fa fa-users" aria-hidden="true"></i> {{ meeting.people }} people
+        joined!</small>
     </a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Meeting details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <b>Meeting name </b>
+        <div>{{ detailMeetingName }}</div>
+        <b>Date and Time </b>
+        <div>{{ detailMeetingDate }}, {{ detailMeetingTime }}</div>
+        <b>Location </b>
+        <ng-map style="height: 400px;" id="list-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
+          <control name="overviewMap" opened="true" />
+        </ng-map>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="btn-group-toggle" data-toggle="buttons" ng-click="toggleJoin()" id="toggleJoin">
+          <label class="btn btn-success">
+            <input type="checkbox" ng-checked="detailMeetingJoined" autocomplete="off"> Join
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

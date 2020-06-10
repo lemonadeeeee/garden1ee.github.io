@@ -4,6 +4,7 @@
     font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
     font-size:14px;
     margin: auto;
+    padding-top: 30px;
 }
 
 .btn-group-toggle {
@@ -26,6 +27,13 @@
 #createBtn {
     margin-top: 20px;
     float: right;
+    width: 100px;
+}
+
+#cancelBtn {
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
 }
 
 #show-map {
@@ -33,10 +41,19 @@
     height: 600px;
 }
 
-.distance {
+#list-map {
+    height: 600px;
+}
+
+.float-right {
     float: right;
 }
 
 .red {
     color: red;
+}
+
+a:hover {
+    background-color: lightgrey;
+    cursor: pointer;
 }
