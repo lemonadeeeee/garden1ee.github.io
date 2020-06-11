@@ -168,6 +168,8 @@ app.controller('meetingCtrl', function ($scope, $log) {
 
     $scope.changed = function () {
         $log.log('Time changed to: ' + $scope.formTime);
+        var tempTime = document.getElementById("tempTime");
+        tempTime.value = $scope.formTime;
     };
 
     $scope.today = function () {
@@ -235,16 +237,16 @@ app.controller('meetingCtrl', function ($scope, $log) {
 
     $scope.submit = function () {
         var name = document.getElementById('name').value;
-        $log.log($scope.formDate);
-        $log.log($scope.formTime)
+        var formDate = document.getElementById("formDate");
+        var tempTime = document.getElementById("tempTime");
         if (name != "" && createMarker != undefined) {
             var new_event = {
                 "name": name,
                 "user_id": "1",
                 "latitude": createMarker.position.lat(),
                 "longitude": createMarker.position.lng(),
-                "date": formatDate($scope.formDate),
-                "time": String($scope.formTime).substring(16, 21),
+                "date": formDate.value,
+                "time": String(tempTime.value).substring(16, 21),
                 "people": "1",
                 "distance": String(latLngToDistance(createMarker.position.lat(), createMarker.position.lng())),
                 "joined": true,
@@ -261,21 +263,6 @@ app.controller('meetingCtrl', function ($scope, $log) {
         var n1_lng = 127.36540920346589
         return Math.round(Math.sqrt((n1_lat - lat) ** 2 + (n1_lng - lng) ** 2) * 111000)
     }
-
-    function formatDate(date) {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
-
-        if (month.length < 2)
-            month = '0' + month;
-        if (day.length < 2)
-            day = '0' + day;
-
-        return [year, month, day].join('-');
-    }
-
 
     var createMap, showMap, listMap, createMarker, listMarker;
     $scope.$on('mapInitialized', function (event, evtMap) {
@@ -357,7 +344,6 @@ app.controller('meetingCtrl', function ($scope, $log) {
         } else {
             gMeeting.people -= 1;
         }
-        $log.log($scope.detailMeetingJoined)
     }
 
     function renderJoinBtn(meeting) {
