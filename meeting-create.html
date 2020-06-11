@@ -9,18 +9,18 @@
   </div>
 
   <label>When to meet? <small class="red">* required</small></label>
-  <div class="row">
+  <div class="row" ng-controller="meetingCtrl">
     <div class="col-md-6">
       <p class="input-group datepicker">
         <input type="text" class="datepicker-input form-control" uib-datepicker-popup ng-model="formDate"
-          is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
+          is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" id="formDate"/>
         <span class="input-group-btn">
           <button type="button" class="btn btn-default" ng-click="open()"><i class="fa fa-calendar"></i></button>
         </span>
       </p>
     </div>
     <div class="col-md-6" uib-timepicker ng-model="formTime" ng-change="changed()" hour-step="hstep" minute-step="mstep"
-      show-meridian="true"></div>
+      show-meridian="true" id="formTime"></div>
   </div>
 
   <label>Where to meet? <small class="red">* required</small></label>
@@ -30,3 +30,4 @@
   <button ui-sref="meeting-list" class="btn btn-success" id="createBtn" ng-click="submit()">Create</button>
   <button ui-sref="meeting-list" class="btn btn-light" id="cancelBtn">Cancel</button>
 </div>
+<input id="tempTime" style="display: none;"/>
