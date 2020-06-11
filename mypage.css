@@ -5,12 +5,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-#pfpagelogo {
-  font-weight: bold;
-  color: #BE5108;
-  font-family: Galindo;
-  margin-left: 10%;
-}
+
 .profile-banner {
 width: 100%;
 height: 300px;
@@ -130,11 +125,24 @@ height:50px;
   border-style: ridge;
   border-color: grey;
   margin: 10px;
-  background-color: lightgray;
+  backgroun
+  d-color: lightgray;
 }
+#logo {
+  color: #BE5108;
+  font-family: Galindo;
+  font-size: 2em;
+  margin-left: 10px;
+}
+
 .header {
   display: inline;
 }
+
 #line{
-  border:1px solid grey;
+  border:1px solid black;
+}
+
+.empty{
+  font-size:30px;
 }
