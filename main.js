@@ -157,6 +157,7 @@ app.controller('meetingCtrl', function ($scope, $log) {
     ]
 
     $scope.formTime = new Date();
+    $scope.formDate = new Date();
     $scope.hstep = 1;
     $scope.mstep = 10;
 
@@ -234,6 +235,8 @@ app.controller('meetingCtrl', function ($scope, $log) {
 
     $scope.submit = function () {
         var name = document.getElementById('name').value;
+        $log.log($scope.formDate);
+        $log.log($scope.formTime)
         if (name != "" && createMarker != undefined) {
             var new_event = {
                 "name": name,
@@ -322,8 +325,12 @@ app.controller('meetingCtrl', function ($scope, $log) {
     $scope.detailMeetingDate = "2020-06-13";
     $scope.detailMeetingTime = "14:30";
     $scope.detailMeetingJoined = false;
+    $scope.detailMeetingPeople = 1;
 
+    var gMeeting;
     $scope.showMeeting = function (meeting) {
+        gMeeting = meeting;
+
         $scope.detailMeetingName = meeting.name;
         $scope.detailMeetingDate = meeting.date;
         $scope.detailMeetingTime = meeting.time;
@@ -338,18 +345,24 @@ app.controller('meetingCtrl', function ($scope, $log) {
             animation: google.maps.Animation.DROP,
         });
         $scope.detailMeetingJoined = meeting.joined;
-        renderJoinBtn();
+        $scope.detailMeetingPeople = meeting.people;
+        renderJoinBtn(meeting);
     }
 
     $scope.toggleJoin = function () {
-        $scope.detailMeetingJoined = !$scope.detailMeetingJoined;
-        renderJoinBtn();
+        gMeeting.joined = !gMeeting.joined;
+        renderJoinBtn(gMeeting);
+        if (gMeeting.joined) {
+            gMeeting.people += 1;
+        } else {
+            gMeeting.people -= 1;
+        }
         $log.log($scope.detailMeetingJoined)
     }
 
-    function renderJoinBtn() {
+    function renderJoinBtn(meeting) {
         var joinBtn = document.getElementById("toggleJoin");
-        if ($scope.detailMeetingJoined) {
+        if (meeting.joined) {
             joinBtn.innerHTML = '<label class="btn btn-success"> <input type="checkbox" ng-checked="detailMeetingJoined" autocomplete="off"> Joined</label>'
         } else {
             joinBtn.innerHTML = '<label class="btn btn-info"> <input type="checkbox" ng-checked="detailMeetingJoined" autocomplete="off"> Join  </label>'
