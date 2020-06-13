@@ -1,4 +1,4 @@
-var app = angular.module('mainnav', ['ngSanitize', 'ui.bootstrap', 'ui.router', 'ngMap']);
+var app = angular.module('mainnav', ['ngSanitize', 'ui.bootstrap', 'ui.router', 'ngMap','slickCarousel']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -7,7 +7,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             views: {
                 'mainbody': {
-                    templateUrl: 'home.html'
+                    templateUrl: 'home.html',
+                    controller: 'homeCtrl'
                 }
             }
         })
@@ -16,7 +17,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             views: {
                 'mainbody': {
-                    templateUrl: 'home.html'
+                    templateUrl: 'home.html',
+                    controller: 'homeCtrl'
                 },
                 'addfriends@morefriends': {
                     templateUrl: 'profiles/morefriends.html'
@@ -28,7 +30,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/f',
             views: {
                 'mainbody': {
-                    templateUrl: 'home.html'
+                    templateUrl: 'home.html',
+                    controller: 'homeCtrl'
                 },
                 'addfriends@filterfriends': {
                     templateUrl: 'profiles/filterprofiles.html'
@@ -118,3 +121,4 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 });
+
