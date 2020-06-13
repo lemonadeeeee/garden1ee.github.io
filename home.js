@@ -1,15 +1,18 @@
-$(document).ready(function(){
-    $('.showevents').slick({
-      accessibility:true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: false,
-      autoplay: true,
-    });
-    $('#left').click(function(){
-        $('.showevents').slick('slickPrev');
-    });
-    $('#right').click(function(){
-        $('.showevents').slick('slickNext');
-    });
-  });
+app.controller('homeCtrl', function($scope, $state) {
+    $scope.slickConfig = {
+        infinite:true,
+        slidesToShow:3,
+        slidesToScroll:1,
+        arrows:false,
+        autoplay:true,
+        method: {}
+    }
+    $scope.dofilter = function() {
+        if ($scope.same) {
+            $state.go('filterfriends');
+        }
+        else {
+            $state.go('home');
+        }
+    }
+})
