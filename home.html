@@ -29,15 +29,15 @@
             <div class="modal-body">
               <h6>Only show dog breeds which are: </h6>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same" ng-model='same'>
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same" ng-model='breed.opt'>
                 <label class="form-check-label" for="breedOpt-same"> same as my dog </label>
               </div>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" checked>
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" ng-model='breed.opt'>
                 <label class="form-check-label" for="breedOpt-friendly"> my dog is friendly to </label>
               </div>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size">
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size" ng-model='breed.opt'>
                 <label class="form-check-label" for="breedOpt-size"> similar in size with my dog </label>
               </div>
               <br>
