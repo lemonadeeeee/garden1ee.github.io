@@ -5,10 +5,10 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "user_id": "1",
             "latitude": "36.37425202630263",
             "longitude": "127.36579723271618",
-            "date": "2020-06-13",
+            "date": "2020-06-15",
             "time": "14:30",
             "people": 3,
-            "distance": "406",
+            "distance": "30",
             "joined": false,
         },
         {
@@ -16,10 +16,10 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "user_id": "1",
             "latitude": "36.368031596219836",
             "longitude": "127.36540920346589",
-            "date": "2020-06-14",
+            "date": "2020-06-17",
             "time": "19:30",
-            "people": 2,
-            "distance": "30",
+            "people": 1,
+            "distance": "406",
             "joined": false,
         },
         {
@@ -27,10 +27,54 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "user_id": "1",
             "latitude": "36.373313437423235",
             "longitude": "127.3644810196351",
-            "date": "2020-06-17",
+            "date": "2020-06-24",
             "time": "10:30",
             "people": 2,
             "distance": "160",
+            "joined": false,
+        },
+        {
+            "name": "Toy flea market",
+            "user_id": "1",
+            "latitude": "36.366010523893664",
+            "longitude": "127.3662156573225",
+            "date": "2020-06-10",
+            "time": "10:30",
+            "people": 5,
+            "distance": "910",
+            "joined": false,
+        },
+        {
+            "name": "Frisbee cup!",
+            "user_id": "1",
+            "latitude": "36.36405800652748",
+            "longitude": "127.36250348004589",
+            "date": "2020-06-10",
+            "time": "10:30",
+            "people": 3,
+            "distance": "1171",
+            "joined": false,
+        },
+        {
+            "name": "Bishon time",
+            "user_id": "1",
+            "latitude": "36.36820159403265",
+            "longitude": "127.36982906102523",
+            "date": "2020-06-10",
+            "time": "10:30",
+            "people": 4,
+            "distance": "800",
+            "joined": false,
+        },
+        {
+            "name": "Snack giveaway",
+            "user_id": "1",
+            "latitude": "36.36205013895425",
+            "longitude": "127.35890225367937",
+            "date": "2020-06-10",
+            "time": "10:30",
+            "people": 4,
+            "distance": "1537",
             "joined": false,
         },
     ]
@@ -138,8 +182,8 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
     }
 
     function latLngToDistance(lat, lng) {
-        var n1_lat = 36.368031596219836
-        var n1_lng = 127.36540920346589
+        var n1_lat = 36.37411039709942
+        var n1_lng = 127.36570460924332
         return Math.round(Math.sqrt((n1_lat - lat) ** 2 + (n1_lng - lng) ** 2) * 111000)
     }
 
@@ -162,6 +206,8 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
         if (createMarker != undefined) {
             createMarker.setMap(null);
         }
+        $log.log(location.lat(), location.lng())
+        $log.log("distance: ", latLngToDistance(location.lat(), location.lng()))
         createMarker = new google.maps.Marker({
             position: location,
             map: createMap,
