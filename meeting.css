@@ -1,10 +1,15 @@
 .form-border{
     width:700px;
     color:#555 !important;
-    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+    font-family:"Noto Grande", "Noto Sans Unicode", "Noto Sans", Verdana, sans-serif;
     font-size:14px;
     margin: auto;
     padding-top: 30px;
+}
+
+.hdtext {
+    margin-top: 2%;
+    margin-left: 25%;
 }
 
 .btn-group-toggle {
@@ -12,9 +17,12 @@
 }
 
 .list-group {
-    margin-top: 6px;
+    margin-top: 16px;
+    margin-bottom: 30px;
 }
-
+.detailtext {
+    margin: 16px;
+}
 .datepicker {
     margin-top: 25px;
     width: 100%;
@@ -37,7 +45,7 @@
 }
 
 #show-map {
-    margin-top: 30px;
+    margin-top: 16px;
     height: 600px;
 }
 

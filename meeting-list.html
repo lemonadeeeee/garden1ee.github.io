@@ -1,5 +1,6 @@
 <link href="./meeting.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2 class="hdtext">Meeting events</h2>
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -35,13 +36,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body detailtext">
         <b>Meeting name </b>
         <div>{{ detailMeetingName }}</div>
         <b>Date and Time </b>
         <div>{{ detailMeetingDate }}, {{ detailMeetingTime }}</div>
         <b>Location </b>
-        <ng-map style="height: 400px;" id="list-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
+        <ng-map style="height: 380px;" id="list-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
           <control name="overviewMap" opened="true" />
         </ng-map>
       </div>
