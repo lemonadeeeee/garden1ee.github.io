@@ -22,14 +22,13 @@ body {
 #logoimage {
     font-size: 1.2em;
 }
-.header {
-    display: inline;
-}
 h1 {
     margin-bottom: 0px;
 }
 #login {
-    margin-left: 40%;
+    float: right;
+    margin-top: 1.5%;
+    margin-right: 3%;
 }
 #login-error {
     margin-top: 0px;
@@ -73,7 +72,6 @@ input {
     font-size: 1.1em;
 }
 #left {
-    display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px;

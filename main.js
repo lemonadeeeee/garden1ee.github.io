@@ -27,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state({
             name: 'filterfriends',
-            url: '/f',
+            url: '/',
             views: {
                 'mainbody': {
                     templateUrl: 'home.html',
