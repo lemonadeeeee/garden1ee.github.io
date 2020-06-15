@@ -3,7 +3,7 @@
 <h2 class="hdtext">Meeting events</h2>
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
-  <button type="button" ng-click="toggleFilter()" id="toggleFilter" class="btn btn-outline-info">View My
+  <button type="button" ng-click="toggleFilter()" ng-init="initFilter()" id="toggleFilter" class="btn btn-outline-info">View My
     Meetings</button>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label class="btn btn-secondary active">

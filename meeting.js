@@ -9,6 +9,15 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             filterBtn.innerHTML = 'View My Meetings';
         }
     }
+    $scope.initFilter = function () {
+        $log.log('hi')
+        var filterBtn = document.getElementById("toggleFilter");
+        if ($scope.onlyMine) {
+            filterBtn.innerHTML = 'View All Meetings';
+        } else {
+            filterBtn.innerHTML = 'View My Meetings';
+        }
+    }
 
     $scope.meetings = [
         {
