@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="wrapincase">
-        <div class="row wrapcards" ng-init="limN=4">
+        <div class="row wrapcards" ng-init="limN=4; dofilter()">
           <div ng-repeat="profile in filprofiles | limitTo: limN as shown" class="col-md-6 card-container">
             <div class="flipping-profile">
               <div class="card front">
@@ -120,8 +120,7 @@
             <div class="col w-100"></div>
           </div>
         </div>
-        <div ui-view="addfriends"></div>
-        <div class="row wrapcards btnrow orgF">
+        <div class="row wrapcards btnrow">
           <div class="col seemore">
             <a ng-hide="shown.length===filprofiles.length" ng-click="limN = limN+4" id="seemorebtn" class="btn btn-light"> See more </a>
             <br>

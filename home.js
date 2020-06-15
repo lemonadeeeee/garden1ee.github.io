@@ -139,8 +139,11 @@ app.controller('homeCtrl', function($scope, $state) {
             "breed": ["same", "friendly"]
         }
     ]  
-
-    $scope.filprofiles = $scope.profiles;
+    function remember() {
+        r=window.localStorage.getItem('v');
+        if (r != null) return r;
+        else return 'friendly';
+    }
     $scope.dofilter = function() {
         window.localStorage.setItem('v', $scope.opt.breed);
         $scope.filprofiles=[];
@@ -151,5 +154,8 @@ app.controller('homeCtrl', function($scope, $state) {
                 }
             }
         });
+    }
+    $scope.opt = {
+        breed: remember()
     }
 })

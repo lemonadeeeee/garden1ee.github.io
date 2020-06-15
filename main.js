@@ -13,32 +13,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
         .state({
-            name: 'morefriends',
-            url: '/',
-            views: {
-                'mainbody': {
-                    templateUrl: 'home.html',
-                    controller: 'homeCtrl'
-                },
-                'addfriends@morefriends': {
-                    templateUrl: 'profiles/morefriends.html'
-                }
-            }
-        })
-        .state({
-            name: 'filterfriends',
-            url: '/',
-            views: {
-                'mainbody': {
-                    templateUrl: 'home.html',
-                    controller: 'homeCtrl'
-                },
-                'addfriends@filterfriends': {
-                    templateUrl: 'profiles/filterprofiles.html'
-                }
-            }
-        })
-        .state({
             name: 'friends',
             url: '/friends',
             views: {
