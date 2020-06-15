@@ -30,15 +30,15 @@
             <div class="modal-body">
               <h6>Only show dog breeds which are: </h6>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same" ng-model='breed.opt'>
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same" ng-model='opt.breed' ng-change="limN=4">
                 <label class="form-check-label" for="breedOpt-same"> same as my dog </label>
               </div>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" ng-model='breed.opt'>
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" ng-model='opt.breed' ng-change="limN=4">
                 <label class="form-check-label" for="breedOpt-friendly"> my dog is friendly to </label>
               </div>
               <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size" ng-model='breed.opt'>
+                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size" ng-model='opt.breed' ng-change="limN=4">
                 <label class="form-check-label" for="breedOpt-size"> similar in size with my dog </label>
               </div>
               <br>
@@ -88,114 +88,42 @@
         </div>
       </div>
       <div class="wrapincase">
-        <div class="row wrapcards orgF">
-          <div class="col-md-6 card-container">
+        <div class="row wrapcards" ng-init="limN=4">
+          <div ng-repeat="profile in filprofiles | limitTo: limN as shown" class="col-md-6 card-container">
             <div class="flipping-profile">
               <div class="card front">
-                <img src="img/maltese.png" class="card-img-top">
+                <img ng-src="{{ profile.pic }}" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title">Hyuji / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>I love walking</p>
+                  <h5 class="card-title">{{profile.dog_name}} / {{profile.owner_name}}</h5>
+                  <p class="card-text"><h6>{{profile.dog_basicinfo}}</h6>{{profile.dog_message}}</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary">
                 <div class="card-body">
-                  <h5 class="card-title">Hyuji</h5>
-                  <p class="card-text"><h6>2 and half years old, Female</h6>
-                    <li>likes walking</li>
-                    <li>looking for walk friends</li></p>
+                  <h5 class="card-title">{{ profile.dog_name }}</h5>
+                  <p class="card-text"><h6>{{profile.dog_agengender}}</h6>
+                  <div ng-repeat="dogpart in profile.dog_intro">
+                    <li>{{dogpart}}</li>
+                  </div></p>
                   <br>
-                  <h5 class="card-title">Jungwon</h5>
-                  <p class="card-text"><h6>21 years old, Female</h6>
-                    <li>interested in hand-made dog snacks</li>
-                    <li>frequent walking time: Mon~Fri 5pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
+                  <h5 class="card-title">{{ profile.owner_name }}</h5>
+                  <p class="card-text"><h6>{{profile.owner_agengender}}</h6>
+                  <div ng-repeat="ownerpart in profile.owner_intro">
+                    <li>{{ownerpart}}</li>
+                  </div></p>
+                  <a href="{{ profile.url }}" class="btn btn-light"> See profile </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/pomeranian.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Mango / Sunghoon</h5>
-                  <p class="card-text"><h6>6/M Pomeranian</h6>finding friends who also loves sunbathing</p>
-                </div>
-              </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Mango</h5>
-                  <p class="card-text"><h6>6 years old, Male</h6>
-                    <li>likes sunbathe</li>
-                    <li>lot of curiosity, but bit shy</li></p>
-                  <br>
-                  <h5 class="card-title">Sunghoon</h5>
-                  <p class="card-text"><h6>25 years old, Male</h6>
-                    <li>interested in frisbee</li>
-                    <li>frequent walking time: Sat~Sun 3pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row wrapcards orgF">
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/poodle.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Caramel / Ryu</h5>
-                  <p class="card-text"><h6>10/M Poodle</h6>cute and polite poodle</p>
-                </div>
-              </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Caramel</h5>
-                  <p class="card-text"><h6>10 years old, Male</h6>
-                    <li>very polite</li>
-                    <li>need time to get friendly</li></p>
-                  <br>
-                  <h5 class="card-title">Ryu</h5>
-                  <p class="card-text"><h6>20 years old, Male</h6>
-                    <li>interested in letting dogs have fun</li>
-                    <li>frequent walking time: Mon~Fri 7pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/bishon-frise.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Jockey / Joomin</h5>
-                  <p class="card-text"><h6>1/F Bishon Frise</h6>My dog is super friendly!</p>
-                </div>
-              </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Jockey</h5>
-                  <p class="card-text"><h6>1 year and three months old, Female</h6>
-                    <li>likes running around</li>
-                    <li>looking for friend to enjoy long time activity</li></p>
-                  <br>
-                  <h5 class="card-title">Joomin</h5>
-                  <p class="card-text"><h6>24 years old, Female</h6>
-                    <li>interested in freedom from dog</li>
-                    <li>frequent walking time: Mon~Fri 7pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
-              </div>
-            </div>
+          <div ng-if="$index %2 != 0">
+            <div class="col w-100"></div>
           </div>
         </div>
         <div ui-view="addfriends"></div>
         <div class="row wrapcards btnrow orgF">
           <div class="col seemore">
-            <a ui-sref="morefriends" id="seemorebtn" class="btn btn-light"> See more </a>
+            <a ng-hide="shown.length===filprofiles.length" ng-click="limN = limN+4" id="seemorebtn" class="btn btn-light"> See more </a>
             <br>
           </div>
         </div>

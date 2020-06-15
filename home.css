@@ -38,6 +38,7 @@
 .card-container {
     display: grid;
     perspective: 700px;
+    margin-bottom: 3%;
 }
 .flipping-profile, .card-container {
     transform-style: preserve-3d;
