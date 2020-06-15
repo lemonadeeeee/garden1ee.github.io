@@ -1,4 +1,15 @@
 angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
+    $scope.onlyMine = false;
+    $scope.toggleFilter = function () {
+        $scope.onlyMine = !$scope.onlyMine;
+        var filterBtn = document.getElementById("toggleFilter");
+        if ($scope.onlyMine) {
+            filterBtn.innerHTML = 'View All Meetings';
+        } else {
+            filterBtn.innerHTML = 'View My Meetings';
+        }
+    }
+
     $scope.meetings = [
         {
             "name": "N1 Puppies",
