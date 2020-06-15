@@ -22,6 +22,19 @@ app.controller('homeCtrl', function($scope, $state) {
             "breed": ["same", "friendly", "size"]
         },
         {
+            "pic": "img/retriever.png",
+            "dog_name": "Toro",
+            "owner_name": "May",
+            "dog_basicinfo": "7/M Labrador Retriever",
+            "dog_message": "Mild, large doggy",
+            "dog_agengender": "7 years old, Male",
+            "dog_intro": ["likes watching people","also likes caring small dogs"],
+            "owner_agengender": "9 years old, Female",
+            "owner_intro": ["interested in walking with Toro","frequent walking time: Mon~Fri 4pm"],
+            "url": "#",
+            "breed": []
+        },
+        {
             "pic": "img/pomeranian.png",
             "dog_name": "Mango",
             "owner_name": "Sunghoon",
@@ -87,19 +100,6 @@ app.controller('homeCtrl', function($scope, $state) {
             "breed": ["friendly", "size"]
         },
         {
-            "pic": "img/retriever.png",
-            "dog_name": "Toro",
-            "owner_name": "May",
-            "dog_basicinfo": "7/M Labrador Retriever",
-            "dog_message": "Mild, large doggy",
-            "dog_agengender": "7 years old, Male",
-            "dog_intro": ["likes watching people","also likes caring small dogs"],
-            "owner_agengender": "9 years old, Female",
-            "owner_intro": ["interested in walking with Toro","frequent walking time: Mon~Fri 4pm"],
-            "url": "#",
-            "breed": []
-        },
-        {
             "pic": "img/stitch.png",
             "dog_name": "Stitch",
             "owner_name": "Lilo",
@@ -122,7 +122,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_intro": ["likes sunbathe","lot of curiosity, but bit shy"],
             "owner_agengender": "25 years old, Male",
             "owner_intro": ["interested in frisbee","frequent walking time: Sat~Sun 3pm"],
-            "url": "#",
+            "url": "friendpage.html",
             "breed": ["same", "friendly", "size"]
         },
         {
@@ -138,22 +138,26 @@ app.controller('homeCtrl', function($scope, $state) {
             "url": "#",
             "breed": ["same", "friendly"]
         }
-    ]  
+    ]
+
     function remember() {
         r=window.localStorage.getItem('v');
         if (r != null) return r;
-        else return 'friendly';
+        else return 'all';
     }
     $scope.dofilter = function() {
         window.localStorage.setItem('v', $scope.opt.breed);
         $scope.filprofiles=[];
-        $scope.profiles.forEach(function(profile) {
-            for (var i=0;i<profile.breed.length;i++){
-                if (profile.breed[i]===$scope.opt.breed) {
-                    $scope.filprofiles.push(profile);
+        if ($scope.opt.breed==="all") $scope.filprofiles=$scope.profiles;
+        else {
+            $scope.profiles.forEach(function(profile) {
+                for (var i=0;i<profile.breed.length;i++) {
+                    if (profile.breed[i]===$scope.opt.breed) {
+                        $scope.filprofiles.push(profile);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     $scope.opt = {
         breed: remember()
