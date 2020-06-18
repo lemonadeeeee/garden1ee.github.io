@@ -10,7 +10,6 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
         }
     }
     $scope.initFilter = function () {
-        $log.log('hi')
         var filterBtn = document.getElementById("toggleFilter");
         if ($scope.onlyMine) {
             filterBtn.innerHTML = 'View All Meetings';
@@ -30,6 +29,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 3,
             "distance": "30",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "E3 Frisbee",
@@ -41,6 +41,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 1,
             "distance": "406",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "N5 Come and play!",
@@ -52,6 +53,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 2,
             "distance": "160",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "Toy flea market",
@@ -63,6 +65,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 5,
             "distance": "910",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "Frisbee cup!",
@@ -74,6 +77,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 3,
             "distance": "1171",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "Bishon time",
@@ -85,6 +89,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 4,
             "distance": "800",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
         {
             "name": "Snack giveaway",
@@ -96,6 +101,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
             "people": 4,
             "distance": "1537",
             "joined": false,
+            "description": "Only small dogs are allowed!",
         },
     ]
 
@@ -182,6 +188,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
         var name = document.getElementById('name').value;
         var formDate = document.getElementById("formDate");
         var tempTime = document.getElementById("tempTime");
+        var description = document.getElementById("description");
         if (name != "" && createMarker != undefined) {
             var new_event = {
                 "name": name,
@@ -193,6 +200,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
                 "people": "1",
                 "distance": String(latLngToDistance(createMarker.position.lat(), createMarker.position.lng())),
                 "joined": true,
+                "description": description,
             }
             $scope.meetings.push(new_event);
             $log.log($scope.meetings)
@@ -258,6 +266,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
     $scope.detailMeetingTime = "14:30";
     $scope.detailMeetingJoined = false;
     $scope.detailMeetingPeople = 1;
+    $scope.detailMeetingDescription = "Only small dogs are allowed!";
 
     var gMeeting;
     $scope.showMeeting = function (meeting) {

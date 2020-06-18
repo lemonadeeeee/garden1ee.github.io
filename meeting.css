@@ -32,6 +32,10 @@
     margin-top: 30px;
 }
 
+#create-map {
+    margin-bottom: 15px;
+}
+
 #createBtn {
     margin-top: 20px;
     float: right;
