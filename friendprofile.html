@@ -1,23 +1,31 @@
 <link href="./friendprofile.css" rel="stylesheet" />
 <div class="profilehead">
-  <div class="d-flex justify-content-center"><div id="bgheader" style="background-color:{{filprofiles[ind].color}}"><button type="button" class="btn btn-info p_friendreq" ng-click="sendreq(ind)"><i class="fas fa-user-plus"></i> Send friend request</button></div></div>
-  <div class="pic-container"> <img class="circlepic" ng-src="{{filprofiles[ind].pic}}"></div>
-  <h3 class="p_name">{{filprofiles[ind].dog_name}} / {{filprofiles[ind].owner_name}}</h3>
-  <p class="p_msg">{{filprofiles[ind].dog_message}}</p>
+  <div class="d-flex justify-content-center"><div id="bgheader" ng-init="reqState(pinfo)" style="background-color:{{pinfo.color}}">
+    <div class="fcase"><button type="button" ng-class="buttonclass" ng-click="buttonfon()">
+      <span ng-show="fstate==='r'"><i class="fas fa-user-plus"></i> Add as friend</span>
+      <span ng-show="fstate==='s'"><i class="fas fa-user-times"></i> Cancel request</span>
+      <span ng-show="fstate==='f'">Friend</span>
+      <span ng-show="fstate==='n'"><i class="fas fa-user-plus"></i> Send friend request</span>
+    </button>
+    <button class="btn btn-info msgbtn" ng-show="fstate==='f'"><i class="fas fa-envelope"></i> Send message</button></div>
+  </div></div>
+  <div class="pic-container"> <img class="circlepic" ng-src="{{pinfo.pic}}"></div>
+  <h3 class="p_name">{{pinfo.dog_name}} / {{pinfo.owner_name}}</h3>
+  <p class="p_msg">{{pinfo.dog_message}}</p>
 </div>
 
 
-<h3 class="p_hdtxt">About {{filprofiles[ind].dog_name}}</h3>
+<h3 class="p_hdtxt">About {{pinfo.dog_name}}</h3>
 <div class="p_introtxt">
-    <li>{{filprofiles[ind].dog_name}} is {{filprofiles[ind].dog_agengender}} {{filprofiles[ind].dog_breed}}.</li>
-    <li>{{filprofiles[ind].dog_name}} {{filprofiles[ind].dog_intro[0]}}. {{filprofiles[ind].dog_name}} is {{filprofiles[ind].dog_intro[1]}}.</li>
-    <li>Interests: <text ng-repeat="interest in filprofiles[ind].interests">{{interest}}<text ng-if="$index!= filprofiles[ind].interests.length-1">, </text></text></li>
-    <li>Frequent walking time: {{filprofiles[ind].walkingtime}}</li></div>
+    <li>{{pinfo.dog_name}} is {{pinfo.dog_agengender}} {{pinfo.dog_breed}}.</li>
+    <li>{{pinfo.dog_name}} {{pinfo.dog_intro[0]}}. {{pinfo.dog_name}} is {{pinfo.dog_intro[1]}}.</li>
+    <li>Interests: <text ng-repeat="interest in pinfo.interests">{{interest}}<text ng-if="$index!= pinfo.interests.length-1">, </text></text></li>
+    <li>Frequent walking time: {{pinfo.walkingtime}}</li></div>
 <br>
 <h3 class="p_hdtxt">Photos</h3><br>
-<div class="row gallery"> <div ng-repeat="photo in filprofiles[ind].photos" class="col-md-3 col-sm-4 photo-container">
+<div class="row gallery"> <div ng-repeat="photo in pinfo.photos" class="col-md-3 col-sm-4 photo-container">
   <img class="galpic" ng-src="{{photo}}">
   </div>
-  <div class="col-md-3 col-sm-4 photo-container"><img class="galpic" ng-src="{{filprofiles[ind].pic}}"></div>
+  <div class="col-md-3 col-sm-4 photo-container"><img class="galpic" ng-src="{{pinfo.pic}}"></div>
 </div>
 <br>

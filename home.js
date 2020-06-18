@@ -195,14 +195,103 @@ app.controller('homeCtrl', function($scope, $state) {
     $scope.createInd = function(n) {
         $scope.ind = n;
     }
+    $scope.pinfo = {}
+    $scope.putpinfo = function(p) {
+        $scope.pinfo = p;
+    }
     $scope.seeprofile = function(d) {
         $state.go('friendprofile',{id:d})
     }
-
+    $scope.reqlist = [
+        {
+            "pic": "img/jindo.jpg",
+            "color": "#987F7E",
+            "dog_name": "Baekho",
+            "owner_name": "Yungmi",
+            "dog_basicinfo": "3/M",
+            "dog_breed": "Jindo dog",
+            "dog_message": "Let's meet and play!",
+            "dog_agengender": "3 year and eight months old, Male",
+            "dog_intro": ["good at fetching frisbee","always energetic"],
+            "owner_agengender": "28 years old, Female",
+            "interests": ["activity with baekho","dog training"],
+            "walkingtime": "Mon~Fri 6pm",
+            "photos": ["img/jindo/moment1.jpg","img/jindo/moment2.jpg","img/jindo/moment3.jpg"],
+            "breed": ["friendly"]
+        }
+    ]
     $scope.sentreqlist = [];
+    $scope.friendlist = [];
+    $scope.starlist = [];
 
-    $scope.sendreq = function(n) {
-        $scope.sentreqlist.push($scope.filprofiles[n]);
+    $scope.rind= -1;
+    $scope.fstate = "";
+    $scope.buttonclass = "btn btn-info p_friendreq";
+    $scope.buttonfn = function(){};
+    $scope.reqState = function(prof) {
+        var scheck = $scope.sentreqlist.indexOf(prof);
+        var rcheck = $scope.reqlist.indexOf(prof);
+        var fcheck = $scope.friendlist.indexOf(prof);
+        var stcheck = $scope.starlist.indexOf(prof);
+        if (scheck!=-1) {
+            $scope.rind = scheck;
+            $scope.fstate = "s";
+            $scope.buttonclass = "btn btn-secondary p_friendreq";
+            $scope.buttonfn = function(){cancelreq(rind)};
+        }
+        else if (rcheck!=-1) {
+            $scope.rind = rcheck;
+            $scope.fstate = "r";
+            $scope.buttonclass = "btn btn-info p_friendreq";
+            $scope.buttonfn = function(){addfriend(rind)};
+        }
+        else if (fcheck!=-1 | stcheck !=-1) {
+            $scope.fstate = "f";
+            $scope.buttonclass = "btn btn-success p_fbtn";
+        }    
+        else {
+            $scope.fstate = "n";    
+            $scope.buttonclass = "btn btn-info p_friendreq";
+            $scope.buttonfn = function(){sendreq(pinfo)};
+        } 
+    }
+    $scope.addfriend = function(n) {
+        $scope.friendlist.push($scope.reqlist[n]);
+        $scope.reqlist.splice(n,1);
+        $scope.fstate = "f";
+        $scope.buttonclass = "btn btn-success p_fbtn";
+    }
+    $scope.declinereq = function(n) {
+        $scope.reqlist.splice(n,1);
+    }
+    $scope.cancelreq = function(n) {
+        $scope.sentreqlist.splice(n,1);
+        $scope.fstate = "n";   
+        $scope.buttonclass = "btn btn-info p_friendreq";
+    }
+    $scope.sendreq = function(prof) {
+        $scope.sentreqlist.push(prof);
+        $scope.fstate = "s";
+        $scope.buttonclass = "btn btn-secondary p_friendreq";
+    }
+    $scope.buttonfon = function() {
+        if ($scope.fstate==="s") $scope.cancelreq($scope.rind);
+        else if ($scope.fstate==="r") $scope.addfriend($scope.rind);
+        else if ($scope.fstate==="n") $scope.sendreq($scope.pinfo); 
+    }
+    $scope.starfriend = function(n) {
+        $scope.starlist.push($scope.friendlist[n]);
+        $scope.friendlist.splice(n,1);
+    }
+    $scope.unstarfriend = function(n) {
+        $scope.friendlist.push($scope.starlist[n]);
+        $scope.starlist.splice(n,1);
+    }
+    $scope.unsfriend = function(n) {
+        $scope.starlist.splice(n,1);
+    }
+    $scope.unfriend = function(n) {
+        $scope.friendlist.splice(n,1);
     }
 })
 

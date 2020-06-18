@@ -43,7 +43,7 @@
               </div>
               <div class="form-check breedsO">
                 <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-all" value="all" ng-model='opt.breed' ng-change="limN=4">
-                <label class="form-check-label" for="breedOpt-size"> I want to see all dog breeds </label>
+                <label class="form-check-label" for="breedOpt-all"> I want to see all dog breeds </label>
               </div>
               <br>
               <h6>Only show users of age between: </h6>
@@ -102,7 +102,7 @@
                   <p class="card-text"><h6>{{profile.dog_basicinfo}} {{profile.dog_breed}}</h6>{{profile.dog_message}}</p>
                 </div>
               </div>
-              <div class="card back text-white bg-secondary" ng-click="createInd($index);seeprofile(profile.dog_name)" class="btn btn-light">
+              <div class="card back text-white bg-secondary" ng-click="createInd($index);putpinfo(profile);seeprofile(profile.dog_name)" class="btn btn-light">
                 <div class="card-body">
                   <h5 class="card-title">{{ profile.dog_name }}</h5>
                   <p class="card-text"><h6>{{profile.dog_agengender}}</h6>

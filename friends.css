@@ -1,3 +1,33 @@
 h3 {
     margin-left: 18%;
 }
+.circlepic {
+    width: 120px;
+    height: 110px;
+    border-radius: 50%;
+}
+.reqlist {
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.req-container {
+    width: 100%;
+}
+.card-body {
+    text-align: center;
+}
+.nocontent {
+    color: slategray;
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+    height: 100px;
+    font-size: x-large;
+}
+.unstarbtn .starbtn {
+    margin-bottom: 5px;
+}
+.stari {
+    color: goldenrod;
+}
