@@ -1,0 +1,14 @@
+<h3>Received friend requests</h3>
+<h3>Sent friend requests</h3>
+<div class="row reqlist" ng-repeat="req in sentreqlist">
+    <div class="col-md-3 col-sm-4 req-container">
+        <div class="card reqcard">
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{req.pic}}">
+                <h5 class="card-title">{{req.dog_name}} / {{req.owner_name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Friends list</h3>
+

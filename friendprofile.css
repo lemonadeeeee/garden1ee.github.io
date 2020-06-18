@@ -1,0 +1,45 @@
+
+
+.pic-container {
+    text-align: center;
+}
+.p_name {
+    text-align: center;
+}
+.p_msg {
+    text-align: center;
+}
+.p_friendreq {
+    float: right;
+    margin-right: 7%;
+    margin-top: 15%;
+}
+.p_hdtxt {
+    margin-left: 18%;
+}
+.p_introtxt li{
+    margin-left: 30%;
+}
+.circlepic {
+    width: 180px;
+    height: 160px;
+    border-radius: 50%;
+    margin-top: -7%;
+}
+#bgheader {
+    width: 1000px;
+    height: 200px;
+    border-radius: 25px;
+    margin-top: -20px;
+}
+.gallery {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.photo-container {
+    margin-bottom: 20px;
+}
+.galpic{
+    width: 200px;
+    height: 180px;
+}

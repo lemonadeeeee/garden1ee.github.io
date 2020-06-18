@@ -99,10 +99,10 @@
                 <img ng-src="{{ profile.pic }}" class="card-img-top">
                 <div class="card-body">
                   <h5 class="card-title">{{profile.dog_name}} / {{profile.owner_name}}</h5>
-                  <p class="card-text"><h6>{{profile.dog_basicinfo}}</h6>{{profile.dog_message}}</p>
+                  <p class="card-text"><h6>{{profile.dog_basicinfo}} {{profile.dog_breed}}</h6>{{profile.dog_message}}</p>
                 </div>
               </div>
-              <div class="card back text-white bg-secondary">
+              <div class="card back text-white bg-secondary" ng-click="createInd($index);seeprofile(profile.dog_name)" class="btn btn-light">
                 <div class="card-body">
                   <h5 class="card-title">{{ profile.dog_name }}</h5>
                   <p class="card-text"><h6>{{profile.dog_agengender}}</h6>
@@ -112,10 +112,8 @@
                   <br>
                   <h5 class="card-title">{{ profile.owner_name }}</h5>
                   <p class="card-text"><h6>{{profile.owner_agengender}}</h6>
-                  <div ng-repeat="ownerpart in profile.owner_intro">
-                    <li>{{ownerpart}}</li>
-                  </div></p>
-                  <a href="{{ profile.url }}" class="btn btn-light"> See profile </a>
+                  <li>interested in <text ng-repeat="interest in profile.interests">{{interest}}<text ng-if="$index!= profile.interests.length-1">, </text></text></li>
+                  <li>frequent walking time: {{profile.walkingtime}}</li></p>
                 </div>
               </div>
             </div>
@@ -124,6 +122,27 @@
             <div class="col w-100"></div>
           </div>
         </div>
+        <!--
+        <div class="modal fade" id="profilewindow" tabindex="-1" role="dialog" aria-labelledby="profiletitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="profiletitle">User Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h6>{{filprofiles[ind].dog_name}}</h6>
+              </div>
+              <button type="button" class="btn btn-success" ng-click="befriend(ind)">Friend</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
         <div class="row wrapcards btnrow">
           <div class="col seemore">
             <a ng-hide="shown.length===filprofiles.length" ng-click="limN = limN+4" id="seemorebtn" class="btn btn-light"> See more </a>
