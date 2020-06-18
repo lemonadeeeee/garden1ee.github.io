@@ -3,6 +3,8 @@
 <h2 class="hdtext">Meeting events</h2>
 <div class="form-border">
   <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a new Meeting</button>
+  <button type="button" ng-click="toggleFilter()" ng-init="initFilter()" id="toggleFilter" class="btn btn-outline-info">View My
+    Meetings</button>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label class="btn btn-secondary active">
       <i class="fa fa-list"></i>
@@ -13,7 +15,8 @@
   </div>
   <div class="list-group">
     <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings"
-      data-toggle="modal" data-target="#exampleModal" ng-click="showMeeting(meeting)">
+      data-toggle="modal" data-target="#exampleModal" ng-click="showMeeting(meeting)"
+      ng-if="meeting.joined || !onlyMine">
       <div class="d-flex w-100 justify-content-between">
         <h4 class="mb-1">{{ meeting.name }} </h4>
         <small class="float-right"><i class="fa fa-map-marker"></i> {{ meeting.distance }}m away</small>
