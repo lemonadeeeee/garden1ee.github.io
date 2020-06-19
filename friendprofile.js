@@ -42,8 +42,6 @@ function newChatToDB() {
 });
 
   if (!existing){
-      var newKey = firebase.database().ref('/profiles/').push();
-      newKey.push("Hi???");
+      var newKey = firebase.database().ref('/profiles/').push(newChat);
   }
-  newKey.push("Hello There??");
 }
