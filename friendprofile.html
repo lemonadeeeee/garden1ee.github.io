@@ -1,4 +1,10 @@
-<link href="./friendprofile.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <link href="./friendprofile.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+</head>
+<body>
 <div class="profilehead">
   <div class="d-flex justify-content-center"><div id="bgheader" ng-init="reqState(pinfo)" style="background-color:{{pinfo.color}}">
     <div class="fcase"><button type="button" ng-class="buttonclass" ng-click="buttonfon()">
@@ -7,7 +13,7 @@
       <span ng-show="fstate==='f'">Friend</span>
       <span ng-show="fstate==='n'"><i class="fas fa-user-plus"></i> Send friend request</span>
     </button>
-    <button class="btn btn-info msgbtn" ng-show="fstate==='f'"><i class="fas fa-envelope"></i> Send message</button></div>
+    <button id="Msg" class="btn btn-info msgbtn" ng-show="fstate==='f'"><i class="fas fa-envelope"></i> Send message</button></div>
   </div></div>
   <div class="pic-container"> <img class="circlepic" ng-src="{{pinfo.pic}}"></div>
   <h3 class="p_name">{{pinfo.dog_name}} / {{pinfo.owner_name}}</h3>
@@ -29,3 +35,6 @@
   <div class="col-md-3 col-sm-4 photo-container"><img class="galpic" ng-src="{{pinfo.pic}}"></div>
 </div>
 <br>
+<script src="./friendprofile.js"></script>
+</body>
+</html>
