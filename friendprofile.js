@@ -46,7 +46,7 @@ function newChatToDB() {
       newKey.push(newChat);
   }
 
-window.location.href = "messages.html";
+//window.location.href = "messages.html";
 }
 
 /*msgBtn.onclick = function(){
