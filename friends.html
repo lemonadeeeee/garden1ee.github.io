@@ -2,7 +2,7 @@
 <br><br>
 <h3>Received friend requests</h3>
 <div class="row reqlist">
-    <div class="col-xl-3 col-md-4 req-container" ng-repeat="request in reqlist">
+    <div class="col-md-4 req-container" ng-repeat="request in reqlist">
         <div class="card reqcard">
             <div class="card-body">
                 <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
@@ -17,7 +17,7 @@
 <br>
 <h3>Sent friend requests</h3>
 <div class="row reqlist">
-    <div class="col-xl-3 col-md-4 req-container" ng-repeat="request in sentreqlist">
+    <div class="col-md-4 req-container" ng-repeat="request in sentreqlist">
         <div class="card reqcard">
             <div class="card-body">
                 <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
@@ -31,7 +31,7 @@
 <br>
 <h3>Friends list</h3>
 <div class="row reqlist">
-    <div class="col-xl-3 col-md-4 req-container" ng-repeat="sfriend in starlist">
+    <div class="col-md-4 req-container" ng-repeat="sfriend in starlist">
         <div class="card reqcard">
             <a ng-click=""><i class="fas fa-star stari"></i></a>
             <div class="card-body">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-md-4 req-container" ng-repeat="friend in friendlist">
+    <div class="col-md-4 req-container" ng-repeat="friend in friendlist">
         <div class="card reqcard">
             <a ng-click=""><i class="far fa-star stari"></i></a>
             <div class="card-body">

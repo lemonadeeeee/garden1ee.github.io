@@ -70,7 +70,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/mypage',
             views: {
                 'mainbody': {
-                    templateUrl: 'mypage.html'
+                    templateUrl: 'myprofile.html'
                 }
             }
         })
@@ -103,4 +103,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 });
-
+app.run(['$transitions', function ($transitions) {
+    $transitions.onSuccess({}, function () {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    })
+}]);

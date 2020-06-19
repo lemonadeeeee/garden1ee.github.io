@@ -7,6 +7,21 @@ app.controller('homeCtrl', function($scope, $state) {
         autoplay:true,
         method: {}
     }
+    $scope.myprofile = {
+        "pic": "img/dubu.jpg",
+        "color": "#E8CFCE",
+        "dog_name": "Dubu",
+        "owner_name": "Yuzu",
+        "dog_basicinfo": "1/M",
+        "dog_breed": "Maltese",
+        "dog_message": "I'd like to meet new friends :)",
+        "dog_agengender": "5 months old, Male",
+        "dog_intro": ["likes meeting other people","always happy and joyful"],
+        "owner_agengender": "20 years old, Female",
+        "interests": ["long walks","cute dog clothes"],
+        "walkingtime": "Mon~Fri 5pm",
+        "photos": ["img/dubu/moment1.jpg","img/dubu/moment2.jpg","img/dubu/moment3.jpg"],
+    }
     $scope.profiles = [
         {
             "pic": "img/maltese.png",
@@ -212,7 +227,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_breed": "Jindo dog",
             "dog_message": "Let's meet and play!",
             "dog_agengender": "3 year and eight months old, Male",
-            "dog_intro": ["good at fetching frisbee","always energetic"],
+            "dog_intro": ["is good at fetching frisbee","always energetic"],
             "owner_agengender": "28 years old, Female",
             "interests": ["activity with baekho","dog training"],
             "walkingtime": "Mon~Fri 6pm",
@@ -220,6 +235,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "breed": ["friendly"]
         }
     ]
+
     $scope.sentreqlist = [];
     $scope.friendlist = [];
     $scope.starlist = [];

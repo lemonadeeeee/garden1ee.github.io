@@ -4,18 +4,18 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $log) {
         $scope.onlyMine = !$scope.onlyMine;
         var filterBtn = document.getElementById("toggleFilter");
         if ($scope.onlyMine) {
-            filterBtn.innerHTML = 'View All Meetings';
+            filterBtn.innerHTML = 'View All Events';
         } else {
-            filterBtn.innerHTML = 'View My Meetings';
+            filterBtn.innerHTML = 'View My Events';
         }
     }
     $scope.initFilter = function () {
         $log.log('hi')
         var filterBtn = document.getElementById("toggleFilter");
         if ($scope.onlyMine) {
-            filterBtn.innerHTML = 'View All Meetings';
+            filterBtn.innerHTML = 'View All Events';
         } else {
-            filterBtn.innerHTML = 'View My Meetings';
+            filterBtn.innerHTML = 'View My Events';
         }
     }
 

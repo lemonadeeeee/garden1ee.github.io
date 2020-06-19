@@ -1,0 +1,25 @@
+<link href="./friendprofile.css" rel="stylesheet" />
+<div class="profilehead">
+  <div class="d-flex justify-content-center"><div id="bgheader" style="background-color:{{myprofile.color}}">
+    <button type="button" class="btn btn-info p_friendreq"><i class="far fa-edit"></i> Edit profile</button>
+  </div></div>
+  <div class="pic-container"> <img class="circlepic" ng-src="{{myprofile.pic}}"></div>
+  <h3 class="p_name">{{myprofile.dog_name}} / {{myprofile.owner_name}}</h3>
+  <p class="p_msg">{{myprofile.dog_message}}</p>
+</div>
+
+
+<h3 class="p_hdtxt">About {{myprofile.dog_name}}</h3>
+<div class="p_introtxt">
+    <li>{{myprofile.dog_name}} is {{myprofile.dog_agengender}} {{myprofile.dog_breed}}.</li>
+    <li>{{myprofile.dog_name}} {{myprofile.dog_intro[0]}}. {{myprofile.dog_name}} is {{myprofile.dog_intro[1]}}.</li>
+    <li>Interests: <text ng-repeat="interest in myprofile.interests">{{interest}}<text ng-if="$index!= myprofile.interests.length-1">, </text></text></li>
+    <li>Frequent walking time: {{myprofile.walkingtime}}</li></div>
+<br>
+<h3 class="p_hdtxt">Photos</h3><br>
+<div class="row gallery"> <div ng-repeat="photo in myprofile.photos" class="col-md-3 col-sm-4 photo-container">
+  <img class="galpic" ng-src="{{photo}}">
+  </div>
+  <div class="col-md-3 col-sm-4 photo-container"><img class="galpic" ng-src="{{myprofile.pic}}"></div>
+</div>
+<br>
