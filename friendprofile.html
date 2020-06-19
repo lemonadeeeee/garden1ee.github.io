@@ -7,7 +7,7 @@
       <span ng-show="fstate==='f'">Friend</span>
       <span ng-show="fstate==='n'"><i class="fas fa-user-plus"></i> Send friend request</span>
     </button>
-    <button id="Msg" class="btn btn-info msgbtn" ng-show="fstate==='f'"><i class="fas fa-envelope"></i> Send message</button></div>
+    <button id="Msg" class="btn btn-info msgbtn" ng-show="fstate==='f'" onclick="newChatToDB()"><i class="fas fa-envelope"></i> Send message</button></div>
   </div></div>
   <div class="pic-container"> <img class="circlepic" ng-src="{{pinfo.pic}}"></div>
   <h3 class="p_name">{{pinfo.dog_name}} / {{pinfo.owner_name}}</h3>
