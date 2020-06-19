@@ -28,7 +28,7 @@ function writeToDatabase(comment) {
       }
     }
 
-    if !(existing){
+    if (!existing){
         newChat.pic = "img/jindo.jpg";
         newChat.dog_name= "Baekho";
         newChat.owner_name= "Yungmi";
@@ -39,7 +39,7 @@ function writeToDatabase(comment) {
     }
 });
 
-  if !(existing){
+  if (!existing){
   var newKey = firebase.database().ref('/profiles/').push();
   newKey.push(newChat);
   }
