@@ -30,6 +30,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
         .state({
+            name: 'friendprofile-meeting',
+            url: '/{id}',
+            views: {
+                'meetingbody' : {
+                    templateUrl: 'friendprofile.html'
+                }
+            }
+        })
+        .state({
             name: 'meeting-list',
             url: '/meeting-list',
             views: {

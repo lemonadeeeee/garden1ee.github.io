@@ -22,6 +22,9 @@
 .detailtext {
     margin: 16px;
 }
+.detailinfo{
+    float: right;
+}
 .datepicker {
     margin-top: 25px;
     width: 100%;
@@ -29,6 +32,10 @@
 
 .form-group {
     margin-top: 30px;
+}
+
+#create-map {
+    margin-bottom: 15px;
 }
 
 #createBtn {
