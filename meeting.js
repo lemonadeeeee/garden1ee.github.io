@@ -424,18 +424,16 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
 
     $scope.seeprofile = function(d) {
         $('#detailModal').modal('hide');
-        for (var i = 0; i < $scope.filprofiles.length; i++) {
-            $log.log(i)
-            if ($scope.filprofiles[i].dog_name == d) {
-                $scope.ind = i;
+        for (var i = 0; i < $scope.profiles.length; i++) {
+            if ($scope.profiles[i].dog_name == d) {
+                $scope.pinfo = $scope.profiles[i];
                 break;
             }
         }
-        $log.log($scope.filprofiles)
         $state.go('friendprofile-meeting',{id:d})
     }
 
-    $scope.filprofiles = [
+    $scope.profiles = [
         {
             "pic": "img/maltese.png",
             "color": "#9C9E77",
