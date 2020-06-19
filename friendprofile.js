@@ -1,4 +1,4 @@
-var msgBtn = document.getElementById("Msg");
+//var msgBtn = document.getElementById("Msg");
 
 const firebaseConfig = {
   apiKey: "AIzaSyABwbeK56paWMXwsNoMEZl9gaZx-JZ4u4c",
@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function writeToDatabase() {
+function newChatToDB() {
   newChat = {};
   var existing = false;
   firebase.database().ref('/profiles/').once('value', function(snapshot) {
@@ -47,6 +47,6 @@ function writeToDatabase() {
 window.location.href = "messages.html";
 }
 
-msgBtn.onclick = function(){
-    writeToDatabase();
-}
+/*msgBtn.onclick = function(){
+    newChatToDB
+}*/
