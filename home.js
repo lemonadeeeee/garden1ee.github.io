@@ -237,7 +237,24 @@ app.controller('homeCtrl', function($scope, $state) {
     ]
 
     $scope.sentreqlist = [];
-    $scope.friendlist = [];
+    $scope.friendlist = [
+        {
+            "pic": "img/maltese4.png",
+            "color": "#987F7E",
+            "dog_name": "Somsom",
+            "owner_name": "Jimin",
+            "dog_basicinfo": "7/F",
+            "dog_breed": "Maltese",
+            "dog_message": "My dog is super friendly!",
+            "dog_agengender": "7 year and three months old, Female",
+            "dog_intro": ["likes running around","looking for friend to enjoy long time activity"],
+            "owner_agengender": "24 years old, Female",
+            "interests": ["running with Somsom","dog activities"],
+            "walkingtime": "Mon~Fri 7pm",
+            "photos": ["img/maltese4/moment1.jpg","img/maltese4/moment2.jpg"],
+            "breed": ["same", "friendly"]
+        }
+    ];
     $scope.starlist = [];
 
     $scope.rind= -1;

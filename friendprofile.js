@@ -38,10 +38,7 @@ function newChatToDB() {
         newChat.lastText = "";
         newChat.texts = [];
         newChat.message = "Let's meet and play!";
+        firebase.database().ref('/profiles/').push(newChat)
     }
 });
-
-  if (!existing){
-      var newKey = firebase.database().ref('/profiles/').push(newChat);
-  }
 }

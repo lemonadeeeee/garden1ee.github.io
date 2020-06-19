@@ -20,7 +20,7 @@ body {
 
 .settings-tray {
   background: #eee;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 7px;
 }
 .settings-tray .no-gutters {
@@ -150,6 +150,16 @@ hr {
 .offset-md-9 .chat-bubble {
   background: #74b9ff;
   color: #fff;
+}
+
+.padding-tray{
+  background: #eee;
+  display: flex;
+  align-items: baseline;
+  padding: 28px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
 }
 
 .chat-box-tray {
