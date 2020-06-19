@@ -23,6 +23,9 @@
 .detailtext {
     margin: 16px;
 }
+.detailinfo{
+    float: right;
+}
 .datepicker {
     margin-top: 25px;
     width: 100%;

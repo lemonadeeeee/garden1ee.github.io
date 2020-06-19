@@ -16,26 +16,26 @@
   </div>
   <div class="list-group">
     <a class="list-group-item list-group-action flex-column align-items-start" ng-repeat="meeting in meetings"
-      data-toggle="modal" data-target="#exampleModal" ng-click="showMeeting(meeting)"
+      data-toggle="modal" data-target="#detailModal" ng-click="showMeeting(meeting)"
       ng-if="meeting.joined || !onlyMine">
       <div class="d-flex w-100 justify-content-between">
         <h4 class="mb-1">{{ meeting.name }} </h4>
         <small class="float-right"><i class="fa fa-map-marker"></i> {{ meeting.distance }}m away</small>
       </div>
       <small>{{ meeting.date }} {{ meeting.time }} </small>
-      <small class="float-right"><i class="fa fa-users" aria-hidden="true"></i> {{ meeting.people }} people
+      <small class="float-right"><i class="fa fa-users" aria-hidden="true"></i> {{ meeting.members.length }} people
         joined!</small>
     </a>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ detailMeetingName }}</h5>
+        <h5 class="modal-title" id="detailModalLabel">{{ detailMeetingName }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -43,7 +43,7 @@
       <div class="modal-body detailtext">
         <div class="col-sm-12">
           <div class="row">
-            <div class="col-6 col-sm-8">
+            <div class="col-6 col-sm-6">
               <b>Meeting name </b>
               <div>{{ detailMeetingName }}</div>
               <b>Date and Time </b>
@@ -51,8 +51,15 @@
               <b>Meeting Description: </b>
               <div>{{ detailMeetingDescription }}</div>
             </div>
-            <div class="col-6 col-sm-4">
-              hi
+            <div class="col-6 col-sm-6">
+              <b>Joined Members</b>
+              <div class="list-group">
+                <a class="list-group-item list-group-action flex-column align-items-start"
+                  ng-repeat="member in detailMeetingMembers" ng-click="seeprofile(member.dog_name)">
+                  <span> {{ member.dog_name }}/{{ member.owner_name }} </span> <span class="detailinfo">
+                    {{ member.info }} </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
