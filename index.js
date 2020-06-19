@@ -10,17 +10,8 @@ $(document).ready(function() {
     })
 });
 
-var firebaseConfig = {
-    apiKey: "AIzaSyBBpPXUc11awDhhp3a1Q58DFnc0pAZVPwI",
-    authDomain: "pr3-4ad35.firebaseapp.com",
-    databaseURL: "https://pr3-4ad35.firebaseio.com",
-    projectId: "pr3-4ad35",
-    storageBucket: "pr3-4ad35.appspot.com",
-    messagingSenderId: "53566132422",
-    appId: "1:53566132422:web:cc20e2593aed493f5307c7"
-  };
 function signup() {
-    var inputs = $("#signup input[type=text]");
+    var inputs = $("#signup input");
     for (var i=0; i< inputs.length; i++){
         var v=0;
         if (!$(inputs[i]).val()) {
