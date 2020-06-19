@@ -43,12 +43,7 @@ function newChatToDB() {
 
   if (!existing){
       var newKey = firebase.database().ref('/profiles/').push();
-      newKey.push(newChat);
+      newKey.push("Hi???");
   }
-
-//window.location.href = "messages.html";
+  newKey.push("Hello There??");
 }
-
-/*msgBtn.onclick = function(){
-    newChatToDB
-}*/
