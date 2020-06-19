@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function writeToDatabase(comment) {
+function writeToDatabase() {
   newChat = {};
   var existing = false;
   firebase.database().ref('/profiles/').once('value', function(snapshot) {
@@ -47,20 +47,6 @@ function writeToDatabase(comment) {
 window.location.href = "messages.html";
 }
 
-function readFromDatabase() {
-  return firebase.database().ref('/profiles/').on('value', function(snapshot) {
-    initializeTable();
-
-    var myValue = snapshot.val();
-    var keyList = Object.keys(myValue);
-
-    for(var i=0;i<keyList.length;i++) {
-      var myKey = keyList[i];
-      addRow(myValue[myKey].comment);
-    }
-});
-}
-
-msgBtn.onClick = function{
-
+msgBtn.onclick = function(){
+    writeToDatabase();
 }
