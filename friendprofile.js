@@ -19,6 +19,8 @@ function newChatToDB() {
   firebase.database().ref('/profiles/').once('value', function(snapshot) {
     var myValue = snapshot.val();
     var keyList = Object.keys(myValue);
+    console.log(keyList);
+    console.log(existing);
 
     for(var i=0;i<keyList.length;i++) {
       var myKey = keyList[i];
@@ -40,8 +42,8 @@ function newChatToDB() {
 });
 
   if (!existing){
-  var newKey = firebase.database().ref('/profiles/').push();
-  newKey.push(newChat);
+      var newKey = firebase.database().ref('/profiles/').push();
+      newKey.push(newChat);
   }
 
 window.location.href = "messages.html";
