@@ -405,7 +405,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
         if (gMeeting.joined) {
             gMeeting.members.push({
                 "owner_name": "Yuzu",
-                "dog_name": "Mandoo",
+                "dog_name": "Dubu",
                 "info": "1/M Maltese",
             });
         } else {
@@ -592,6 +592,21 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
             "walkingtime": "Mon~Fri 7pm",
             "photos": ["img/maltese4/moment1.jpg","img/maltese4/moment2.jpg"],
             "breed": ["same", "friendly"]
+        },
+        {
+            "pic": "img/dubu.jpg",
+            "color": "#E8CFCE",
+            "dog_name": "Dubu",
+            "owner_name": "Yuzu",
+            "dog_basicinfo": "1/M",
+            "dog_breed": "Maltese",
+            "dog_message": "I'd like to meet new friends :)",
+            "dog_agengender": "5 months old, Male",
+            "dog_intro": ["likes meeting other people","always happy and joyful"],
+            "owner_agengender": "20 years old, Female",
+            "interests": ["long walks","cute dog clothes"],
+            "walkingtime": "Mon~Fri 5pm",
+            "photos": ["img/dubu/moment1.jpg","img/dubu/moment2.jpg","img/dubu/moment3.jpg"],
         }
     ]
 });
