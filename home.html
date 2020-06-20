@@ -100,6 +100,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{profile.dog_name}} / {{profile.owner_name}}</h5>
                   <p class="card-text"><h6>{{profile.dog_basicinfo}} {{profile.dog_breed}}</h6>{{profile.dog_message}}</p>
+                  <p class="card-text distance"><i class="fa fa-map-marker"></i> {{profile.distance}}m away</p>
                 </div>
               </div>
               <div class="card back text-white bg-secondary" ng-click="createInd($index);putpinfo(profile);seeprofile(profile.dog_name)" class="btn btn-light">

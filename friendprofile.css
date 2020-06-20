@@ -3,10 +3,10 @@
 .pic-container {
     text-align: center;
 }
-.p_name {
+.p_name, .p_msg{
     text-align: center;
 }
-.p_msg {
+.p_place {
     text-align: center;
 }
 .p_friendreq {

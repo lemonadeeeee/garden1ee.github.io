@@ -93,4 +93,6 @@
 .breedsO, .ageO {
     margin-left: 40%;
 }
-
+.distance {
+    float: right;
+}

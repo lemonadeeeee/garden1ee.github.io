@@ -23,3 +23,16 @@ body {
     font-size: 2em;
     vertical-align: middle;
 }
+.badge {
+    font-size: 0.5em;
+}
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    background-color: #b4805d;
+}

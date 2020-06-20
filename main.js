@@ -117,3 +117,22 @@ app.run(['$transitions', function ($transitions) {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
     })
 }]);
+app.controller('notifyCtrl', function($scope,$rootScope) {
+    $scope.noticelist = [
+        {
+            title: "Welcome to Puddies!",
+            content: "Make new friends, and join some meetings!"
+        }
+    ]
+    $scope.newnotice = {
+        title: "Congratulations!",
+        content: "You've finished all tasks successfully!"
+    }
+    $scope.checked = 0;
+    $scope.read = 0;
+    $rootScope.$on('taskfinished', function(){
+        $scope.noticelist.unshift($scope.newnotice);
+    });
+    //$rootScope.$emit('taskfinished'); when task finished
+
+})
