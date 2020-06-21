@@ -44,8 +44,12 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifibtn">
                 <div ng-repeat="notice in noticelist" ng-style="{'background-color': read ? 'white' : 'rgba(255,239,207,1)'}">
-                  <div class="dropdown-item notices" ng-click="read=1"><h5><i class="fas fa-paw"></i> &nbsp; {{notice.title}} </h5> <p class="noticecontent"> {{notice.content}} </p>
+                  <div class="dropdown-item notices" ng-click="read=1">
+                    <h5><i class="fas fa-paw"></i> &nbsp; {{notice.title}} <a type="button" class="close" ng-click="removenot($index)">x</a></h5> <p class="noticecontent"> {{notice.content}} </p>
                   </div>
+                </div>
+                <div class="dropdown-item notices" ng-show="noticelist.length===0">
+                  <p>You don't have any notifications.</p>
                 </div>
               </div>
             </li>

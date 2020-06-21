@@ -128,6 +128,9 @@ app.controller('notifyCtrl', function($scope,$rootScope) {
         title: "Congratulations!",
         content: "You've finished all tasks successfully!"
     }
+    $scope.removenot = function (n) {
+        $scope.noticelist.splice(n,1);
+    }
     $scope.checked = 0;
     $scope.read = 0;
     $rootScope.$on('taskfinished', function(){
