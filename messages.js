@@ -15,7 +15,7 @@ var temp = 0;
 
 var iconList = [];
 var keyList = [];
-var activeChat = 0;
+var activeChat = 1;
 count = 0;
 
 const firebaseConfig = {
