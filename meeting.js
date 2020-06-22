@@ -301,7 +301,7 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
                 "time": String(tempTime.value).substring(16, 21),
                 "distance": String(latLngToDistance(createMarker.position.lat(), createMarker.position.lng())),
                 "joined": true,
-                "description": description,
+                "description": description.value,
                 "members": [
                     {
                         "owner_name": "Yuzu",
