@@ -14,6 +14,7 @@ app.controller('homeCtrl', function($scope, $state) {
         "owner_name": "Yuzu",
         "dog_basicinfo": "1/M",
         "dog_breed": "Maltese",
+        "address": "Yuseong-gu, Daejeon",
         "dog_message": "I'd like to meet new friends :)",
         "dog_agengender": "5 months old, Male",
         "dog_intro": ["likes meeting other people","always happy and joyful"],
