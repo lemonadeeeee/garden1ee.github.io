@@ -18,6 +18,7 @@ app.controller('homeCtrl', function($scope, $state) {
         "dog_message": "I'd like to meet new friends :)",
         "dog_agengender": "5 months old, Male",
         "dog_intro": ["likes meeting other people","always happy and joyful"],
+        "owner_age": 20,
         "owner_agengender": "20 years old, Female",
         "interests": ["long walks","cute dog clothes"],
         "walkingtime": "Mon~Fri 5pm",
@@ -37,6 +38,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_agengender": "2 and half years old, Female",
             "dog_intro": ["likes walking","looking for walk friends"],
             "owner_agengender": "21 years old, Female",
+            "owner_age": 21,
             "interests": ["hand-made dog snacks", "good walking spots"],
             "walkingtime":"Mon~Fri 5pm",
             "photos": ["img/maltese/moment1.jpg","img/maltese/moment2.jpg","img/maltese/moment3.png"],
@@ -54,6 +56,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "Mild, large doggy",
             "dog_agengender": "7 years old, Male",
             "dog_intro": ["likes watching people","very gentle to small dogs"],
+            "owner_age": 9,
             "owner_agengender": "9 years old, Female",
             "interests": ["dog walking", "frisbee"],
             "walkingtime" : "Mon~Fri 4pm",
@@ -72,6 +75,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "finding friends who also loves sunbathing",
             "dog_agengender": "6 years old, Male",
             "dog_intro": ["likes sunbathe","bit shy, but has a lot of curiosity"],
+            "owner_age": 25,
             "owner_agengender": "25 years old, Male",
             "interests": ["frisbee","dog toys"],
             "walkingtime" : "Sat~Sun 3pm",
@@ -90,6 +94,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "cute and polite poodle",
             "dog_agengender": "10 years old, Male",
             "dog_intro": ["need time to get friendly", "very polite"],
+            "owner_age": 20,
             "owner_agengender": "20 years old, Male",
             "interests": ["letting dogs have fun","training tips"],
             "walkingtime": "Mon~Fri 7pm",
@@ -108,6 +113,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "My dog is super friendly!",
             "dog_agengender": "1 year and three months old, Female",
             "dog_intro": ["likes running around","looking for friend to enjoy long time activity"],
+            "owner_age": 24,
             "owner_agengender": "24 years old, Female",
             "interests": ["freedom from dog"],
             "walkingtime": "Mon~Fri 7pm",
@@ -126,6 +132,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "Let's be friend!",
             "dog_agengender": "4 years old, Male",
             "dog_intro": ["get along well with small dogs","afraid of big dogs"],
+            "owner_age": 27,
             "owner_agengender": "27 years old, Male",
             "interests": ["making dog loving friends"],
             "walkingtime": "Mon~Fri 6pm",
@@ -144,6 +151,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "Mona is kind to everybody",
             "dog_agengender": "1 years old, Female",
             "dog_intro": ["likes people except Hansoo","also kind to other dogs"],
+            "owner_age": 33,
             "owner_agengender": "33 years old, Male",
             "interests": ["fooling Mona"],
             "walkingtime" : "Mon~Fri 3pm, 8pm",
@@ -162,6 +170,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "want to make friend!",
             "dog_agengender": "5 years old, Male",
             "dog_intro": ["has many charms","little bit peculiar.."],
+            "owner_age": 16,
             "owner_agengender": "16 years old, Female",
             "interests": ["making friend to stitch"],
             "walkingtime": "Mon~Fri 7pm",
@@ -179,6 +188,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "Maltese forever!",
             "dog_agengender": "3 years old, Male",
             "dog_intro": ["likes sunbathe","a snack lover"],
+            "owner_age": 25,
             "owner_agengender": "25 years old, Male",
             "interests": ["new snacks", "frisbee"],
             "walkingtime": "Sat~Sun 3pm",
@@ -197,6 +207,7 @@ app.controller('homeCtrl', function($scope, $state) {
             "dog_message": "My dog is super friendly!",
             "dog_agengender": "7 year and three months old, Female",
             "dog_intro": ["likes running around","looking for friend to enjoy long time activity"],
+            "owner_age": 24,
             "owner_agengender": "24 years old, Female",
             "interests": ["running with Somsom","dog activities"],
             "walkingtime": "Mon~Fri 7pm",
@@ -205,27 +216,34 @@ app.controller('homeCtrl', function($scope, $state) {
         }
     ]
 
-    function remember() {
-        r=window.localStorage.getItem('v');
+    function remember(x,y) {
+        r=window.localStorage.getItem(x);
         if (r != null) return r;
-        else return 'all';
+        else return y;
     }
     $scope.dofilter = function() {
-        window.localStorage.setItem('v', $scope.opt.breed);
+        window.localStorage.setItem('breed', $scope.opt.breed);
+        window.localStorage.setItem('yage',$scope.opt.yage);
+        window.localStorage.setItem('oage',$scope.opt.oage);
         $scope.filprofiles=[];
-        if ($scope.opt.breed==="all") $scope.filprofiles=$scope.profiles;
-        else {
-            $scope.profiles.forEach(function(profile) {
-                for (var i=0;i<profile.breed.length;i++) {
-                    if (profile.breed[i]===$scope.opt.breed) {
-                        $scope.filprofiles.push(profile);
+        var agerange = [$scope.opt.yage,$scope.opt.oage];
+        $scope.profiles.forEach(function(profile) {
+            if (profile.owner_age>=agerange[0]&&profile.owner_age<=agerange[1]) {
+                if ($scope.opt.breed==="all") $scope.filprofiles.push(profile);
+                else {
+                    for (var i=0;i<profile.breed.length;i++) {
+                        if (profile.breed[i]===$scope.opt.breed) {
+                            $scope.filprofiles.push(profile);
+                        }
                     }
                 }
-            });
-        }
+            }
+        });
     }
     $scope.opt = {
-        breed: remember()
+        breed: remember('breed','all'),
+        yage: remember('yage','0'),
+        oage: remember('oage','80')
     }
     $scope.ind = 0;
     $scope.createInd = function(n) {

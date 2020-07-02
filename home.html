@@ -28,65 +28,63 @@
               </button>
             </div>
             <div class="modal-body">
-              <h6>Only show dog breeds which are: </h6>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same" ng-model='opt.breed' ng-change="limN=4">
-                <label class="form-check-label" for="breedOpt-same"> same as my dog </label>
-              </div>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" ng-model='opt.breed' ng-change="limN=4">
-                <label class="form-check-label" for="breedOpt-friendly"> my dog is friendly to </label>
-              </div>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size" ng-model='opt.breed' ng-change="limN=4">
-                <label class="form-check-label" for="breedOpt-size"> similar in size with my dog </label>
-              </div>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-all" value="all" ng-model='opt.breed' ng-change="limN=4">
-                <label class="form-check-label" for="breedOpt-all"> I want to see all dog breeds </label>
-              </div>
-              <br>
-              <h6>Only show users of age between: </h6>
-              <div class="form-row ageO"> 
-                <div class="form-group col-md-4">
-                  <select class="form-control" id="Age-young">
-                    <option selected>-</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                  </select>
-                </div>
-                &nbsp; to &nbsp;
-                <div class="form-group col-md-4">
-                  <select class="form-control" id="Age-old">
-                    <option selected>-</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                  </select>
-                </div>
+              <h6>Dog breed option: </h6>
+              <div class="breedsO">
+                <label for="sameOpt" class="breedOpt-label">
+                  <input type="radio" id="sameOpt" name="breedOpt" value="same" ng-model='opt.breed' ng-change="limN=4">
+                  <span>same as mine</span>
+                </label>
+                <label for="friendlyOpt" class="breedOpt-label">
+                  <input type="radio" id="friendlyOpt" name="breedOpt" value="friendly" ng-model='opt.breed' ng-change="limN=4">
+                  <span>friendly to mine</span>
+                </label>
+                <br>
+                <label for="sizeOpt" class="breedOpt-label">
+                  <input type="radio" id="sizeOpt" name="breedOpt" value="size" ng-model='opt.breed' ng-change="limN=4">
+                  <span>similar in size</span>
+                </label>
+                <label for="allOpt" class="breedOpt-label">
+                  <input type="radio" id="allOpt" name="breedOpt" value="all" ng-model='opt.breed' ng-change="limN=4">
+                  <span>all breeds</span>
+                </label>
               </div>
               <br>
-              <h6>Only show users with at least one common interest. &nbsp;
-              <div class="form-check-inline interestO">
-                <input class="form-check-input" type="checkbox" id="interestOpt" value="same">
+              <h6>User age option: </h6>
+              <div class="form-row ageO">
+                <div class="form-group col-md-4">
+                  <input class="form-control" id="Age-young" ng-model='opt.yage' ng-change="limN=4">
+                </div>
+                &nbsp; ~ &nbsp;
+                <div class="form-group col-md-4">
+                  <input class="form-control" id="Age-old" ng-model='opt.oage' ng-change="limN=4">
+                </div>
+              </div>
+              <h6>Other options you can choose: </h6>
+              <div class="otherO">
+                <label for="interestOpt" class="otherOpt-label">
+                  <input type="checkbox" id="interestOpt" name="otherOpt" value="interest" ng-model='opt.interest' ng-change="limN=4">
+                  <span>common interest</span>
+                </label>
+                <label for="walktimeOpt" class="otherOpt-label">
+                  <input type="checkbox" id="walktimeOpt" name="otherOpt" value="walktime" ng-model='opt.walktime' ng-change="limN=4">
+                  <span>common walking time</span>
+                </label>
+                <br>
+                <label for="dogageOpt" class="otherOpt-label">
+                  <input type="checkbox" id="dogageOpt" name="otherOpt" value="dogage" ng-model='opt.dogage' ng-change="limN=4">
+                  <span>dogs of similar age</span>
+                </label>
+                <label for="charaOpt" class="otherOpt-label">
+                  <input type="checkbox" id="charaOpt" name="otherOpt" value="character" ng-model='opt.character' ng-change="limN=4">
+                  <span>dogs of similar characters</span>
+                </label>
               </div>
               </h6>
               <br>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" ng-click='dofilter()' data-dismiss="modal" class="btn btn-success">Save changes</button>
+              <button type="button" ng-click='dofilter()' data-dismiss="modal" class="btn btn-danger submitbtn">Save changes</button>
             </div>
           </div>
         </div>
@@ -122,6 +120,7 @@
           <div ng-if="$index %2 != 0">
             <div class="col w-100"></div>
           </div>
+          <div ng-show="filprofiles.length===0"><i>Sorry, there's no puddy who meets the condition :{</i></div>
         </div>
         <!--
         <div class="modal fade" id="profilewindow" tabindex="-1" role="dialog" aria-labelledby="profiletitle" aria-hidden="true">
