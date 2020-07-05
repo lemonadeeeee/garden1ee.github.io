@@ -304,9 +304,9 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
                 "description": description.value,
                 "members": [
                     {
-                        "owner_name": "Yuzu",
-                        "dog_name": "Dubu",
-                        "info": "1/M Maltese",
+                        "owner_name": "Jane",
+                        "dog_name": "Mary",
+                        "info": "3/F Shih Tzu",
                     },
                 ]
             }
@@ -404,9 +404,9 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
         renderJoinBtn(gMeeting);
         if (gMeeting.joined) {
             gMeeting.members.push({
-                "owner_name": "Yuzu",
-                "dog_name": "Dubu",
-                "info": "1/M Maltese",
+                "owner_name": "Jane",
+                "dog_name": "Mary",
+                "info": "3/F Shih Tzu",
             });
         } else {
             gMeeting.members.splice(-1, 1);
@@ -596,12 +596,12 @@ angular.module('mainnav').controller('meetingCtrl', function ($scope, $state, $l
         {
             "pic": "img/dubu.jpg",
             "color": "#E8CFCE",
-            "dog_name": "Dubu",
-            "owner_name": "Yuzu",
-            "dog_basicinfo": "1/M",
-            "dog_breed": "Maltese",
+            "dog_name": "Mary",
+            "owner_name": "Jane",
+            "dog_basicinfo": "3/F",
+            "dog_breed": "Shih Tzu",
             "dog_message": "I'd like to meet new friends :)",
-            "dog_agengender": "5 months old, Male",
+            "dog_agengender": "3 years old, Female",
             "dog_intro": ["likes meeting other people","always happy and joyful"],
             "owner_agengender": "20 years old, Female",
             "interests": ["long walks","cute dog clothes"],
