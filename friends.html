@@ -15,20 +15,6 @@
 </div>
 <div class="nocontent" ng-show="reqlist.length===0"> <i>No requests to show</i> </div>
 <br>
-<h3>Sent friend requests</h3>
-<div class="row reqlist">
-    <div class="col-md-4 req-container" ng-repeat="request in sentreqlist">
-        <div class="card reqcard">
-            <div class="card-body">
-                <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
-                <h5 class="card-title">{{request.dog_name}} / {{request.owner_name}}</h5>
-                <button type="button" class="btn btn-info cancelbtn" ng-click="cancelreq($index)">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="nocontent" ng-show="sentreqlist.length===0"> <i>No sent request</i> </div>
-<br>
 <h3>Friends list</h3>
 <div class="row reqlist">
     <div class="col-md-4 req-container" ng-repeat="sfriend in starlist">
@@ -55,5 +41,19 @@
     </div>
 </div>
 <div class="nocontent" ng-show="starlist.length+friendlist.length===0"> <i>No friends :{ Go and make some new friends!</i> </div>
+<br>
+<h3>Sent friend requests</h3>
+<div class="row reqlist">
+    <div class="col-md-4 req-container" ng-repeat="request in sentreqlist">
+        <div class="card reqcard">
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
+                <h5 class="card-title">{{request.dog_name}} / {{request.owner_name}}</h5>
+                <button type="button" class="btn btn-info cancelbtn" ng-click="cancelreq($index)">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nocontent" ng-show="sentreqlist.length===0"> <i>No sent request</i> </div>
 <br><br>
 
