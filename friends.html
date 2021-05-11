@@ -1,0 +1,59 @@
+<link href="./friends.css" rel="stylesheet" />
+<br><br>
+<h3>Received friend requests</h3>
+<div class="row reqlist">
+    <div class="col-md-4 req-container" ng-repeat="request in reqlist">
+        <div class="card reqcard">
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
+                <h5 class="card-title">{{request.dog_name}} / {{request.owner_name}}</h5>
+                <button type="button" class="btn btn-info acceptbtn" ng-click="addfriend($index)">Accept</button>
+                <button type="button" class="btn btn-secondary removebtn" ng-click="declinereq($index)">Decline</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nocontent" ng-show="reqlist.length===0"> <i>No requests to show</i> </div>
+<br>
+<h3>Friends list</h3>
+<div class="row reqlist">
+    <div class="col-md-4 req-container" ng-repeat="sfriend in starlist">
+        <div class="card reqcard">
+            <a ng-click=""><i class="fas fa-star stari"></i></a>
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{sfriend.pic}}" ng-click="putpinfo(sfriend);seeprofile(sfriend.dog_name)">
+                <h5 class="card-title">{{sfriend.dog_name}} / {{sfriend.owner_name}}</h5>
+                <button type="button" class="btn btn-warning unstarbtn" ng-click="unstarfriend($index)">Starred</button>
+                <button type="button" class="btn btn-secondary unfriendbtn" ng-click="unsfriend($index)">Unfriend</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 req-container" ng-repeat="friend in friendlist">
+        <div class="card reqcard">
+            <a ng-click=""><i class="far fa-star stari"></i></a>
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{friend.pic}}" ng-click="putpinfo(friend);seeprofile(friend.dog_name)">
+                <h5 class="card-title">{{friend.dog_name}} / {{friend.owner_name}}</h5>
+                <button type="button" class="btn btn-outline-warning starbtn" ng-click="starfriend($index)">Star <i class="far fa-star"></i></button>
+                <button type="button" class="btn btn-secondary unfriendbtn" ng-click="unfriend($index)">Unfriend</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nocontent" ng-show="starlist.length+friendlist.length===0"> <i>No friends :{ Go and make some new friends!</i> </div>
+<br>
+<h3>Sent friend requests</h3>
+<div class="row reqlist">
+    <div class="col-md-4 req-container" ng-repeat="request in sentreqlist">
+        <div class="card reqcard">
+            <div class="card-body">
+                <img class="circlepic" ng-src="{{request.pic}}" ng-click="putpinfo(request);seeprofile(request.dog_name)">
+                <h5 class="card-title">{{request.dog_name}} / {{request.owner_name}}</h5>
+                <button type="button" class="btn btn-info cancelbtn" ng-click="cancelreq($index)">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nocontent" ng-show="sentreqlist.length===0"> <i>No sent request</i> </div>
+<br><br>
+

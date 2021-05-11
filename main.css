@@ -6,7 +6,6 @@ body {
     font-weight: bold;
     color: #BE5108;
     font-family: Galindo;
-    margin-right: -10%;
 }
 #topbar {
     background-color: rgba(255,239,207,1);
@@ -15,12 +14,25 @@ body {
     font-size: 2em;
 }
 .nav-item {
-    margin-left: 0%;
-    margin-right: 15%;
+    margin-left: -20%;
+    margin-right: 35%;
     text-align: center;
     font-family: Noto Sans;
 }
 .sidebar-item i {
     font-size: 2em;
     vertical-align: middle;
+}
+.badge {
+    font-size: 0.5em;
+}
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    background-color: #b4805d;
 }

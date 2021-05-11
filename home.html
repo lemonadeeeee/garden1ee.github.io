@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html ng-app="bringhomecontents">
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Noto Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="./home.css" rel="stylesheet" />
-    <title>Puddies!</title>
-  </head>
-  <body id="mainhome">
-      <h2 class="hdtext">Popular events</h2><br>
+<link href="./home.css" rel="stylesheet" />
+<body id="mainhome" ng-controller='homeCtrl'>
+      <h2 class="hdtext">Popular meetups</h2><br>
       <div class="wrap">
-        <button id="left" type="button"><i class="fas fa-angle-left"></i></button>
-        <div class="showevents">
-          <div class="eventelem"><h4>Toy flea market</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/toy.jpg" style="width:200px;height:150px;"></div>
-          <div class="eventelem"><h4>Frisbee cup!</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/frisbee.jpg" style="width:200px;height:150px;"></div>
-          <div class="eventelem"><h4>Bishon time</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/bishon.jpg" style="width:200px;height:150px;"></div>
-          <div class="eventelem"><h4>Snack giveaway</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/snack.jpg" style="width:200px;height:150px;"></div>
+        <button id="left" type="button" ng-click="slickConfig.method.slickPrev()"><i class="fas fa-angle-left"></i></button>
+        <div class='showevents'>
+        <slick settings='slickConfig'>
+            <div class="eventelem"><h4>Toy flea market</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/toy.jpg" style="width:200px;height:150px;"></div>
+            <div class="eventelem"><h4>Frisbee cup!</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/frisbee.jpg" style="width:200px;height:150px;"></div>
+            <div class="eventelem"><h4>Bishon time</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/bishon.jpg" style="width:200px;height:150px;"></div>
+            <div class="eventelem"><h4>Snack giveaway</h4>6/10 Gapcheon riverside park, Daejeon<br><img src="img/snack.jpg" style="width:200px;height:150px;"></div>
+        </slick>
         </div>
-        <button id="right" type="button"><i class="fas fa-angle-right"></i></button>
+        <button id="right" type="button" ng-click="slickConfig.method.slickNext()"><i class="fas fa-angle-right"></i></button>
       </div>
+      <br>
       <h2 class="hdtext">Friends for you</h2><br>
       <div id="filterbtnbox"><button class="btn btn-lg btn-outline-dark" data-toggle="modal" data-target="#filterwindow">
         <i class="fas fa-filter"></i> Filter
@@ -35,181 +28,126 @@
               </button>
             </div>
             <div class="modal-body">
-              <h6>Only show dog breeds which are: </h6>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-same" value="same">
-                <label class="form-check-label" for="breedOpt-same"> same as my dog </label>
-              </div>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-friendly" value="friendly" checked>
-                <label class="form-check-label" for="breedOpt-friendly"> my dog is friendly to </label>
-              </div>
-              <div class="form-check breedsO">
-                <input class="form-check-input" type="radio" name="breedOpt" id="breedOpt-size" value="size">
-                <label class="form-check-label" for="breedOpt-size"> similar in size with my dog </label>
-              </div>
-              <br>
-              <h6>Only show users of age between: </h6>
-              <div class="form-row ageO"> 
-                <div class="form-group col-md-4">
-                  <select class="form-control" id="Age-young">
-                    <option selected>-</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                  </select>
-                </div>
-                &nbsp; to &nbsp;
-                <div class="form-group col-md-4">
-                  <select class="form-control" id="Age-old">
-                    <option selected>-</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                  </select>
-                </div>
+              <h6>Preferences on dog breeds: </h6>
+              <div class="breedsO">
+                <label for="sameOpt" class="breedOpt-label">
+                  <input type="radio" id="sameOpt" name="breedOpt" value="same" ng-model='opt.breed' ng-change="limN=4">
+                  <span>same as mine</span>
+                </label>
+                <label for="friendlyOpt" class="breedOpt-label">
+                  <input type="radio" id="friendlyOpt" name="breedOpt" value="friendly" ng-model='opt.breed' ng-change="limN=4">
+                  <span>friendly to mine</span>
+                </label>
+                <br>
+                <label for="sizeOpt" class="breedOpt-label">
+                  <input type="radio" id="sizeOpt" name="breedOpt" value="size" ng-model='opt.breed' ng-change="limN=4">
+                  <span>similar in size</span>
+                </label>
+                <label for="allOpt" class="breedOpt-label">
+                  <input type="radio" id="allOpt" name="breedOpt" value="all" ng-model='opt.breed' ng-change="limN=4">
+                  <span>all breeds</span>
+                </label>
               </div>
               <br>
-              <h6>Only show users with at least one common interest. &nbsp;
-              <div class="form-check-inline interestO">
-                <input class="form-check-input" type="checkbox" id="interestOpt" value="same">
+              <h6>Preferences on owner's age: </h6>
+              <div class="form-row ageO">
+                <div class="form-group col-md-4">
+                  <input class="form-control" id="Age-young" ng-model='opt.yage' ng-change="limN=4">
+                </div>
+                &nbsp; ~ &nbsp;
+                <div class="form-group col-md-4">
+                  <input class="form-control" id="Age-old" ng-model='opt.oage' ng-change="limN=4">
+                </div>
+              </div>
+              <h6>Other options you can choose: </h6>
+              <div class="otherO">
+                <label for="interestOpt" class="otherOpt-label">
+                  <input type="checkbox" id="interestOpt" name="otherOpt" value="interest" ng-model='opt.interest' ng-change="limN=4">
+                  <span>common interest</span>
+                </label>
+                <label for="walktimeOpt" class="otherOpt-label">
+                  <input type="checkbox" id="walktimeOpt" name="otherOpt" value="walktime" ng-model='opt.walktime' ng-change="limN=4">
+                  <span>common walking time</span>
+                </label>
+                <br>
+                <label for="dogageOpt" class="otherOpt-label">
+                  <input type="checkbox" id="dogageOpt" name="otherOpt" value="dogage" ng-model='opt.dogage' ng-change="limN=4">
+                  <span>dogs of similar age</span>
+                </label>
+                <label for="charaOpt" class="otherOpt-label">
+                  <input type="checkbox" id="charaOpt" name="otherOpt" value="character" ng-model='opt.character' ng-change="limN=4">
+                  <span>dogs of similar characters</span>
+                </label>
               </div>
               </h6>
               <br>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" ui-sref='filterfriends' data-dismiss="modal" class="btn btn-success">Save changes</button>
+              <button type="button" ng-click='dofilter()' data-dismiss="modal" class="btn btn-danger submitbtn">Save changes</button>
             </div>
           </div>
         </div>
       </div>
       <div class="wrapincase">
-        <div class="row wrapcards orgF">
-          <div class="col-md-6 card-container">
+        <div class="row wrapcards" ng-init="limN=4; dofilter()">
+          <div ng-repeat="profile in filprofiles | limitTo: limN as shown" class="col-md-6 card-container">
             <div class="flipping-profile">
               <div class="card front">
-                <img src="img/maltese.png" class="card-img-top">
+                <img ng-src="{{ profile.pic }}" class="card-img-top">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu / Jungwon</h5>
-                  <p class="card-text"><h6>2/F Maltese</h6>I love walking</p>
+                  <h5 class="card-title">{{profile.dog_name}} / {{profile.owner_name}}</h5>
+                  <p class="card-text"><h6>{{profile.dog_basicinfo}} {{profile.dog_breed}}</h6>{{profile.dog_message}}</p>
+                  <p class="card-text distance"><i class="fa fa-map-marker"></i> {{profile.distance}}m away</p>
                 </div>
               </div>
-              <div class="card back text-white bg-secondary">
+              <div class="card back text-white bg-secondary" ng-click="createInd($index);putpinfo(profile);seeprofile(profile.dog_name)" class="btn btn-light">
                 <div class="card-body">
-                  <h5 class="card-title">Dubu</h5>
-                  <p class="card-text"><h6>2 and half years old, Female</h6>
-                    <li>likes walking</li>
-                    <li>looking for walk friends</li></p>
+                  <h5 class="card-title">{{ profile.dog_name }}</h5>
+                  <p class="card-text"><h6>{{profile.dog_agengender}}</h6>
+                  <div ng-repeat="dogpart in profile.dog_intro">
+                    <li>{{dogpart}}</li>
+                  </div></p>
                   <br>
-                  <h5 class="card-title">Jungwon</h5>
-                  <p class="card-text"><h6>21 years old, Female</h6>
-                    <li>interested in hand-made dog snacks</li>
-                    <li>frequent walking time: Mon~Fri 5pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
+                  <h5 class="card-title">{{ profile.owner_name }}</h5>
+                  <p class="card-text"><h6>{{profile.owner_agengender}}</h6>
+                  <li>interested in <text ng-repeat="interest in profile.interests">{{interest}}<text ng-if="$index!= profile.interests.length-1">, </text></text></li>
+                  <li>frequent walking time: {{profile.walkingtime}}</li></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/pomeranian.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Mango / Sunghoon</h5>
-                  <p class="card-text"><h6>6/M Pomeranian</h6>finding friends who also loves sunbathing</p>
-                </div>
+          <div ng-if="$index %2 != 0">
+            <div class="col w-100"></div>
+          </div>
+          <div ng-show="filprofiles.length===0"><i>Sorry, there's no puddy who meets the condition :{</i></div>
+        </div>
+        <!--
+        <div class="modal fade" id="profilewindow" tabindex="-1" role="dialog" aria-labelledby="profiletitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="profiletitle">User Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Mango</h5>
-                  <p class="card-text"><h6>6 years old, Male</h6>
-                    <li>likes sunbathe</li>
-                    <li>lot of curiosity, but bit shy</li></p>
-                  <br>
-                  <h5 class="card-title">Sunghoon</h5>
-                  <p class="card-text"><h6>25 years old, Male</h6>
-                    <li>interested in frisbee</li>
-                    <li>frequent walking time: Sat~Sun 3pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
+              <div class="modal-body">
+                <h6>{{filprofiles[ind].dog_name}}</h6>
+              </div>
+              <button type="button" class="btn btn-success" ng-click="befriend(ind)">Friend</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="row wrapcards orgF">
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/poodle.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Caramel / Ryu</h5>
-                  <p class="card-text"><h6>10/M Poodle</h6>cute and polite poodle</p>
-                </div>
-              </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Caramel</h5>
-                  <p class="card-text"><h6>10 years old, Male</h6>
-                    <li>very polite</li>
-                    <li>need time to get friendly</li></p>
-                  <br>
-                  <h5 class="card-title">Ryu</h5>
-                  <p class="card-text"><h6>20 years old, Male</h6>
-                    <li>interested in letting dogs have fun</li>
-                    <li>frequent walking time: Mon~Fri 7pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 card-container">
-            <div class="flipping-profile">
-              <div class="card front">
-                <img src="img/bishon-frise.png" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Jockey / Joomin</h5>
-                  <p class="card-text"><h6>1/F Bishon Frise</h6>My dog is super friendly!</p>
-                </div>
-              </div>
-              <div class="card back text-white bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Jockey</h5>
-                  <p class="card-text"><h6>1 year and three months old, Female</h6>
-                    <li>likes running around</li>
-                    <li>looking for friend to enjoy long time activity</li></p>
-                  <br>
-                  <h5 class="card-title">Joomin</h5>
-                  <p class="card-text"><h6>24 years old, Female</h6>
-                    <li>interested in freedom from dog</li>
-                    <li>frequent walking time: Mon~Fri 7pm</li></p>
-                  <a href="#" class="btn btn-light"> See profile </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ui-view="addfriends"></div>
-        <div class="row wrapcards btnrow orgF">
+        -->
+        <div class="row wrapcards btnrow">
           <div class="col seemore">
-            <a ui-sref="morefriends" id="seemorebtn" class="btn btn-light"> See more </a>
+            <a ng-hide="shown.length===filprofiles.length" ng-click="limN = limN+4" id="seemorebtn" class="btn btn-light"> See more </a>
             <br>
           </div>
         </div>
       </div>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-  <script src="./home.js"></script>
-  </body>
-  </html>     
+</body>

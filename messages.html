@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Puddies Messages</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'>
+	<link rel="stylesheet" href="./messages.css">
+	<link id="messagesref" href="https://youtu.be/fCpw5i_2IYU" rel="author">
+
+
+</head>
+<body>
+<div class="container">
+	<div class="row no-gutters">
+	  <div class="col-md-4 border-right">
+		<div class="settings-tray">
+		  <img class="profile-image" src="https://i.ibb.co/vzmvJBs/owner-1.jpg" alt="Profile img">
+		  <span class="settings-tray--right">
+			<i class="material-icons">create</i>
+		  </span>
+		</div>
+		  <div id="friend-icons">
+		  </div>
+		  <div class="row copy" >
+			  <div class="col-12">
+				  <div class="padding-tray">
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="col-md-8 cont" id="chat1view">
+		<div class="settings-tray">
+			<div class="friend-drawer no-gutters friend-drawer--grey">
+			<img class="profile-image" id="chatImg">
+			<div class="text">
+			  <h6 id="chatName"></h6>
+			  <p class="text-muted overflow" id="chatMessage"></p>
+			</div>
+		  </div>
+		</div>
+		<div class="chat-panel scroll">
+			<div class="put" id="panel1">
+				<div id="msgContainer">
+				</div>
+			</div>
+			<div class="row copy" >
+				<div class="col-12">
+					<div class="chat-box-tray">
+						<i class="material-icons">sentiment_very_satisfied</i>
+						<input type="text" placeholder="Type your message here..." id="chat1input">
+						<i class="material-icons">mic</i>
+						<i class="material-icons" id="send1">send</i>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+  </div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script src="./messages.js"></script>
+
+</body>
+</html>

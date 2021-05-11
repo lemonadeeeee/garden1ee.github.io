@@ -1,5 +1,8 @@
+<link href="./meeting.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="form-border">
-  <button type="button" class="btn btn-success">Create a new Meeting</button>
+  <h2 class="hdtext">Meetup events</h2><br>
+  <button ui-sref="meeting-create" type="button" class="btn btn-success">Create a New Event</button>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label ui-sref="meeting-list" class="btn btn-secondary">
       <i class="fa fa-list"></i>
@@ -8,8 +11,7 @@
       <i class="fa fa-map-o"></i>
     </label>
   </div>
-  <ng-map id="show-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
-    <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
+  <ng-map style="height: 650px;" id="show-map" zoom="16" center="[36.37425202630263, 127.36579723271618]">
     <control name="overviewMap" opened="true" />
   </ng-map>
 </div>

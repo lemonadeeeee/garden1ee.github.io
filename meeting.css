@@ -1,9 +1,14 @@
 .form-border{
     width:700px;
     color:#555 !important;
-    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+    font-family:"Noto Grande", "Noto Sans Unicode", "Noto Sans", Verdana, sans-serif;
     font-size:14px;
     margin: auto;
+    padding-top: 30px;
+}
+
+.hdtext {
+    margin-top: 2%;
 }
 
 .btn-group-toggle {
@@ -11,11 +16,17 @@
 }
 
 .list-group {
-    margin-top: 6px;
+    margin-top: 16px;
+    margin-bottom: 30px;
 }
-
+.detailtext {
+    margin: 16px;
+}
+.detailinfo{
+    float: right;
+}
 .datepicker {
-    margin-top: 34px;
+    margin-top: 25px;
     width: 100%;
 }
 
@@ -23,16 +34,40 @@
     margin-top: 30px;
 }
 
+#create-map {
+    margin-bottom: 15px;
+}
+
 #createBtn {
     margin-top: 20px;
     float: right;
+    width: 100px;
+}
+
+#cancelBtn {
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
 }
 
 #show-map {
-    margin-top: 30px;
+    margin-top: 16px;
     height: 600px;
 }
 
-.distance {
+#list-map {
+    height: 600px;
+}
+
+.float-right {
     float: right;
+}
+
+.red {
+    color: red;
+}
+
+a:hover {
+    background-color: lightgrey;
+    cursor: pointer;
 }

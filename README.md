@@ -2,6 +2,7 @@ Kindly leave brief file description here:
 
 Overall dependencies
 * Fontawesome icons
+* Material icons
 * Google fonts
 * Jquery
 
@@ -17,7 +18,9 @@ Dependencies
 ### home.html - main page with popular events and friend recommendation (with home.css, home.js)
 Dependencies
 * Slick - library for slider
-* Bootstrap 4.5.0 - Card elements and buttons
+    * with angular-slick which is a library to enable slick on angular environment
+* Bootstrap 4.5.0 - Card elements, buttons, and modal elements.
+    * Referred to code examples of Bootstrap document on 'modal' a lot in implementation
 
 ### meeting.html - container page to show meeting-related pages
 Dependencies
@@ -36,3 +39,15 @@ Dependencies
 Dependencies
 * AngularJS and AngularJS modules (ngMap, ui.bootstrap, ngAnimate, ngSanitize)
 * Bootstrap 3.3.7 - buttons and form
+
+### messages.html - page that handles the messaging features of the app such as chats
+Dependencies
+* Bootstrap 4.1.3 - container and buttons
+
+### mypage.html - page that shows user's profile along with profile related information such as user's information,friends, and meetings
+Dependencies
+* Bootstrap 3.3.6 - buttons
+
+### friendpage.html - page that shows another user's profile you can see and interact with
+Dependencies
+* Bootstrap 3.3.6 - buttons
